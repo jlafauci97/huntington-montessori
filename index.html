@@ -374,15 +374,15 @@ function HomePage({ setCurrent: setCurrent2 }) {
     marginBottom: 72,
     flexWrap: "wrap",
     gap: 24
-  }, className: "section-header" }, /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement(Tag, null, "Our Programs"), /* @__PURE__ */ React.createElement("h2", { style: {
+  }, className: "section-header", style2: "center" }, /* @__PURE__ */ React.createElement("div", { style: { textAlign: "center", width: "100%" } }, /* @__PURE__ */ React.createElement(Tag, null, "Our Programs"), /* @__PURE__ */ React.createElement("h2", { style: {
     fontFamily: F.d,
-    fontSize: "clamp(32px,4vw,48px)",
+    fontSize: "clamp(42px,5vw,64px)",
     fontWeight: 400,
     color: C.navy,
     lineHeight: 1.15,
     letterSpacing: "-0.02em",
     marginTop: 16
-  } }, "A Montessori journey", /* @__PURE__ */ React.createElement("br", null), "for every stage")), /* @__PURE__ */ React.createElement(Btn, { variant: "ghost", onClick: () => setCurrent2("programs") }, "View All Programs ", /* @__PURE__ */ React.createElement(ArrowRight, { size: 15 })))), /* @__PURE__ */ React.createElement("div", { style: { display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 1, background: C.border }, className: "programs-grid" }, [
+  } }, "A Montessori journey", /* @__PURE__ */ React.createElement("br", null), "for every stage"), /* @__PURE__ */ React.createElement("div", { style: { marginTop: 24 } }, /* @__PURE__ */ React.createElement(Btn, { variant: "ghost", onClick: () => setCurrent2("programs") }, "View All Programs ", /* @__PURE__ */ React.createElement(ArrowRight, { size: 15 })))))), /* @__PURE__ */ React.createElement("div", { style: { display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 1, background: C.border }, className: "programs-grid" }, [
     {
       icon: Sprout,
       img: IMG.toddlerProgram,
