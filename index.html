@@ -939,45 +939,47 @@ function CalendarPage() {
   });
   const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   const dayLabels = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-  const events = [
+  const singleEvents = [
     { date: "2025-09-01", title: "No School \u2014 Labor Day", type: "closure" },
     { date: "2025-09-02", title: "Faculty Meeting", type: "milestone" },
-    { date: "2025-09-03", title: "1st Day of School \u2014 Returning Pre-K & All K & Elementary", type: "milestone" },
-    { date: "2025-09-04", title: "1st Day of School \u2014 New Pre-K", type: "milestone" },
-    { date: "2025-09-08", title: "1st Day of School \u2014 Toddler Students", type: "milestone" },
+    { date: "2025-09-03", title: "1st Day \u2014 Returning Pre-K & All K & Elem.", type: "milestone" },
+    { date: "2025-09-04", title: "1st Day \u2014 New Pre-K", type: "milestone" },
+    { date: "2025-09-08", title: "1st Day \u2014 Toddler Students", type: "milestone" },
     { date: "2025-09-10", title: "Meet the Teacher (Evening)", type: "community" },
-    { date: "2025-09-23", title: "No School \u2014 Rosh Hashanah", type: "closure" },
-    { date: "2025-09-24", title: "No School \u2014 Rosh Hashanah", type: "closure" },
     { date: "2025-10-02", title: "No School \u2014 Yom Kippur", type: "closure" },
     { date: "2025-10-13", title: "No School \u2014 Columbus Day", type: "closure" },
     { date: "2025-10-20", title: "No School \u2014 Diwali", type: "closure" },
     { date: "2025-10-24", title: "At Risk Student Recommendations Due", type: "milestone" },
-    { date: "2025-11-04", title: "No School \u2014 Election Day / Faculty Meeting (All Staff Meeting)", type: "closure" },
+    { date: "2025-11-04", title: "No School \u2014 Election Day / Faculty Meeting", type: "closure" },
     { date: "2025-11-11", title: "No School \u2014 Veterans' Day", type: "closure" },
     { date: "2025-11-24", title: "Report Cards Due", type: "milestone" },
-    { date: "2025-11-26", title: "No School \u2014 Thanksgiving Recess", type: "closure" },
-    { date: "2025-11-27", title: "No School \u2014 Thanksgiving", type: "closure" },
-    { date: "2025-11-28", title: "No School \u2014 Thanksgiving Recess", type: "closure" },
-    { date: "2025-12-01", title: "K & Elementary Evening Conferences (Class in session)", type: "parents" },
-    { date: "2025-12-04", title: "No School \u2014 K & Elementary Conferences (Pre-K & Toddler in session)", type: "parents" },
-    { date: "2025-12-22", title: "No School \u2014 Winter Recess Begins", type: "closure" },
-    { date: "2026-01-02", title: "No School \u2014 Winter Recess", type: "closure" },
+    { date: "2025-12-01", title: "K & Elem. Evening Conferences", type: "parents" },
+    { date: "2025-12-04", title: "No School \u2014 K & Elem. Conferences", type: "parents" },
     { date: "2026-01-05", title: "Toddler/Pre-K Evening Conferences", type: "parents" },
-    { date: "2026-01-08", title: "No School \u2014 Toddler/Pre-K Day Conferences (K & Elem. in session)", type: "parents" },
+    { date: "2026-01-08", title: "No School \u2014 Toddler/Pre-K Conferences", type: "parents" },
     { date: "2026-01-19", title: "No School \u2014 Martin Luther King Jr. Day", type: "closure" },
-    { date: "2026-02-16", title: "No School \u2014 February Recess", type: "closure" },
-    { date: "2026-02-20", title: "No School \u2014 February Recess", type: "closure" },
-    { date: "2026-03-02", title: "Start of Read Across America Week", type: "community" },
+    { date: "2026-03-02", title: "Read Across America Week", type: "community" },
     { date: "2026-03-05", title: "K & Elem. Evening Conferences", type: "parents" },
-    { date: "2026-03-09", title: "No School \u2014 K & Elementary Conferences (Pre-K & Toddler in session)", type: "parents" },
+    { date: "2026-03-09", title: "No School \u2014 K & Elem. Conferences", type: "parents" },
     { date: "2026-03-30", title: "No School \u2014 End-of-Tri", type: "closure" },
-    { date: "2026-04-02", title: "No School \u2014 Spring Recess Begins", type: "closure" },
-    { date: "2026-04-10", title: "No School \u2014 Spring Recess", type: "closure" },
     { date: "2026-05-19", title: "Report Cards Due", type: "milestone" },
-    { date: "2026-05-22", title: "No School \u2014 Memorial Day Weekend", type: "closure" },
-    { date: "2026-05-25", title: "No School \u2014 Memorial Day", type: "closure" },
     { date: "2026-06-12", title: "Last Day of School", type: "milestone" }
   ];
+  const rangeEvents = [
+    { start: "2025-09-23", end: "2025-09-24", title: "No School \u2014 Rosh Hashanah", type: "closure" },
+    { start: "2025-11-26", end: "2025-11-28", title: "No School \u2014 Thanksgiving Recess", type: "closure" },
+    { start: "2025-12-22", end: "2026-01-02", title: "No School \u2014 Winter Recess", type: "closure" },
+    { start: "2026-02-16", end: "2026-02-20", title: "No School \u2014 February Recess", type: "closure" },
+    { start: "2026-04-02", end: "2026-04-10", title: "No School \u2014 Spring Recess", type: "closure" },
+    { start: "2026-05-22", end: "2026-05-25", title: "No School \u2014 Memorial Day Weekend", type: "closure" }
+  ];
+  const events = [...singleEvents];
+  rangeEvents.forEach((r) => {
+    const s = new Date(r.start + "T00:00:00"), e = new Date(r.end + "T00:00:00");
+    for (let d = new Date(s); d <= e; d.setDate(d.getDate() + 1)) {
+      events.push({ date: d.toISOString().slice(0, 10), title: r.title, type: r.type });
+    }
+  });
   const typeStyles = {
     milestone: { color: C.sky, bg: C.skyFaint, label: "Milestone" },
     community: { color: "#2D8A56", bg: "#EFF8F3", label: "Community" },
