@@ -48,9 +48,9 @@ button:hover{opacity:.88}
 }
 /* ChildCareCRM form overrides */
 #childcarecrm-tour-form .childcarecrm-form{font-family:'Onest',sans-serif}
-#childcarecrm-tour-form label{font-family:'Onest',sans-serif;font-size:13px;font-weight:500;color:#475569;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:8px;display:block}
+#childcarecrm-tour-form label:not(.a2p-checkbox-label){font-family:'Onest',sans-serif;font-size:13px;font-weight:500;color:#475569;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:8px;display:block}
 #childcarecrm-tour-form .childcarecrm-form__label-required-mark{color:#4A9FE5}
-#childcarecrm-tour-form .childcarecrm-form__control,
+#childcarecrm-tour-form .childcarecrm-form__control:not([type="checkbox"]),
 #childcarecrm-tour-form select,
 #childcarecrm-tour-form input[type="text"],
 #childcarecrm-tour-form input[type="email"],
@@ -63,6 +63,47 @@ button:hover{opacity:.88}
   transition:border-color 0.2s,box-shadow 0.2s;
   -webkit-appearance:none;appearance:none;
 }
+/* Checkbox override */
+#childcarecrm-tour-form input[type="checkbox"],
+#childcarecrm-tour-form .a2p-checkbox-container input[type="checkbox"]{
+  width:18px!important;height:18px!important;min-width:18px!important;
+  padding:0!important;margin:0!important;
+  border:2px solid #CBD5E1!important;border-radius:4px!important;
+  background:#fff!important;cursor:pointer!important;
+  -webkit-appearance:none!important;appearance:none!important;
+  flex-shrink:0!important;position:relative!important;
+  transition:border-color 0.2s,background 0.2s;
+}
+#childcarecrm-tour-form input[type="checkbox"]:checked{
+  background:#4A9FE5!important;border-color:#4A9FE5!important;
+}
+#childcarecrm-tour-form input[type="checkbox"]:checked::after{
+  content:'\2713';position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);color:#fff;font-size:12px;font-weight:700;
+}
+/* A2P checkbox container layout */
+#childcarecrm-tour-form .a2p-container{width:100%!important;margin:16px 0!important}
+#childcarecrm-tour-form .a2p-container .col-md-offset-1.col-md-10{
+  width:100%!important;max-width:100%!important;margin:0!important;
+  padding:0!important;float:none!important;
+}
+#childcarecrm-tour-form .a2p-checkbox-container{
+  display:flex!important;align-items:flex-start!important;gap:12px!important;
+  width:100%!important;
+}
+#childcarecrm-tour-form .a2p-checkbox-label{
+  font-family:'Onest',sans-serif!important;font-size:13px!important;
+  color:#64748B!important;line-height:1.6!important;
+  text-transform:none!important;letter-spacing:normal!important;
+  font-weight:400!important;margin:0!important;
+}
+#childcarecrm-tour-form .a2p-terms{
+  font-family:'Onest',sans-serif!important;font-size:11px!important;
+  color:#94a3b8!important;line-height:1.5!important;
+  margin-top:8px!important;
+}
+#childcarecrm-tour-form .a2p-terms a{color:#4A9FE5!important;text-decoration:none!important}
+#childcarecrm-tour-form .a2p-terms a:hover{text-decoration:underline!important}
 #childcarecrm-tour-form select{
   background:#FAFBFD url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23475569' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat right 16px center!important;
   padding-right:40px!important;cursor:pointer;
