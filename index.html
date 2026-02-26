@@ -15,6 +15,9 @@ button:hover{opacity:.88}
 .mobile-toggle{display:none!important}
 @media(max-width:1024px){
 .desktop-nav{display:none!important}.mobile-toggle{display:block!important}
+.nav-inner{position:relative!important}
+.logo-group{margin-left:0!important;position:absolute!important;left:50%;transform:translateX(-50%)!important}
+.mobile-toggle{position:absolute!important;right:24px!important;top:50%;transform:translateY(-50%)!important}
 .hero-grid,.philosophy-grid,.contact-grid{grid-template-columns:1fr!important}
 .hero-grid{gap:64px!important}
 .stats-grid{grid-template-columns:repeat(2,1fr)!important}
@@ -216,7 +219,7 @@ function Nav({ current, setCurrent: setCurrent2 }) {
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between"
-  }, className: "nav-inner" }, /* @__PURE__ */ React.createElement("div", { style: { cursor: "pointer", display: "flex", alignItems: "center", gap: 10, marginLeft: -140 }, onClick: () => setCurrent2("home") }, /* @__PURE__ */ React.createElement("img", { src: LOGO_SRC, style: { width: 174, height: 174, objectFit: "contain" }, alt: "HMS" }), /* @__PURE__ */ React.createElement("div", { style: { marginLeft: -20 } }, /* @__PURE__ */ React.createElement("div", { style: { fontFamily: F.logo, fontSize: 22, fontWeight: 400, color: "#FFFFFF", lineHeight: 1.05, letterSpacing: "0.04em" } }, "Huntington"), /* @__PURE__ */ React.createElement("div", { style: { fontFamily: F.logo, fontSize: 22, fontWeight: 400, color: "#FFFFFF", lineHeight: 1.05, letterSpacing: "0.04em" } }, "Montessori"), /* @__PURE__ */ React.createElement("div", { style: { fontFamily: F.nav, fontSize: 9, fontWeight: 300, color: "rgba(255,255,255,0.85)", letterSpacing: "0.28em", textTransform: "uppercase", marginTop: 2 } }, "School"))), /* @__PURE__ */ React.createElement("div", { className: "desktop-nav", style: { display: "flex", alignItems: "center" } }, pages.map((p) => /* @__PURE__ */ React.createElement("button", { key: p.id, onClick: () => setCurrent2(p.id), style: {
+  }, className: "nav-inner" }, /* @__PURE__ */ React.createElement("div", { className: "logo-group", style: { cursor: "pointer", display: "flex", alignItems: "center", gap: 10, marginLeft: -140 }, onClick: () => { setCurrent2("home"); setOpen(false); } }, /* @__PURE__ */ React.createElement("img", { src: LOGO_SRC, style: { width: 174, height: 174, objectFit: "contain" }, alt: "HMS" }), /* @__PURE__ */ React.createElement("div", { style: { marginLeft: -20 } }, /* @__PURE__ */ React.createElement("div", { style: { fontFamily: F.logo, fontSize: 22, fontWeight: 400, color: "#FFFFFF", lineHeight: 1.05, letterSpacing: "0.04em" } }, "Huntington"), /* @__PURE__ */ React.createElement("div", { style: { fontFamily: F.logo, fontSize: 22, fontWeight: 400, color: "#FFFFFF", lineHeight: 1.05, letterSpacing: "0.04em" } }, "Montessori"), /* @__PURE__ */ React.createElement("div", { style: { fontFamily: F.nav, fontSize: 9, fontWeight: 300, color: "rgba(255,255,255,0.85)", letterSpacing: "0.28em", textTransform: "uppercase", marginTop: 2 } }, "School"))), /* @__PURE__ */ React.createElement("div", { className: "desktop-nav", style: { display: "flex", alignItems: "center" } }, pages.map((p) => /* @__PURE__ */ React.createElement("button", { key: p.id, onClick: () => setCurrent2(p.id), style: {
     background: "none",
     border: "none",
     cursor: "pointer",
@@ -241,7 +244,7 @@ function Nav({ current, setCurrent: setCurrent2 }) {
     right: 0,
     bottom: 0,
     background: C.white,
-    padding: "100px 32px 32px",
+    padding: "160px 32px 32px",
     overflowY: "auto",
     zIndex: 998,
     display: "flex",
