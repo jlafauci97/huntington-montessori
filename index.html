@@ -111,6 +111,98 @@ button:hover{opacity:.88}
 @media(max-width:640px){
   #childcarecrm-tour-form .childcarecrm-form__contact-row{grid-template-columns:1fr}
 }
+/* FullCalendar tour calendar overrides */
+#childcarecrm-tour-form .fc{
+  font-family:'Onest',sans-serif!important;
+  background:transparent!important;border:none!important;
+  max-width:100%!important;
+}
+#childcarecrm-tour-form .fc-view-container{
+  border:1px solid #E2E8F0!important;border-radius:12px!important;
+  overflow:hidden!important;background:#fff!important;
+}
+#childcarecrm-tour-form .fc table{border-collapse:separate!important;border-spacing:0!important}
+#childcarecrm-tour-form .fc td,
+#childcarecrm-tour-form .fc th{border-color:#E2E8F0!important}
+#childcarecrm-tour-form .fc-head-container{border-bottom:2px solid #E2E8F0!important}
+/* Week header (Sun 3/1, Mon 3/2...) */
+#childcarecrm-tour-form .fc-day-header{
+  font-family:'Onest',sans-serif!important;font-size:13px!important;
+  font-weight:600!important;color:#0B1D3A!important;
+  padding:14px 4px!important;text-transform:uppercase!important;
+  letter-spacing:0.03em!important;background:#FAFBFD!important;
+}
+/* Title (Mar 1 – 7, 2026) */
+#childcarecrm-tour-form .fc-toolbar h2{
+  font-family:'Instrument Serif',serif!important;font-size:28px!important;
+  font-weight:400!important;color:#0B1D3A!important;
+}
+/* Nav buttons (< >) */
+#childcarecrm-tour-form .fc-button{
+  background:#0B1D3A!important;border:none!important;
+  border-radius:8px!important;padding:8px 14px!important;
+  transition:background 0.2s!important;
+}
+#childcarecrm-tour-form .fc-button:hover{background:#1a3155!important}
+#childcarecrm-tour-form .fc-button:focus{box-shadow:0 0 0 3px rgba(74,159,229,0.2)!important}
+#childcarecrm-tour-form .fc-button .fc-icon{font-size:16px!important}
+#childcarecrm-tour-form .fc-toolbar{margin-bottom:20px!important;padding:0 4px!important}
+/* Time slot events */
+#childcarecrm-tour-form .fc-event,
+#childcarecrm-tour-form .fc-day-grid-event{
+  background:#fff!important;border:1px solid #E2E8F0!important;
+  border-radius:8px!important;padding:8px 6px!important;
+  margin:3px 4px!important;cursor:pointer!important;
+  transition:all 0.2s!important;text-align:center!important;
+  border-left:3px solid #4A9FE5!important;
+}
+#childcarecrm-tour-form .fc-event:hover{
+  background:#EBF4FC!important;border-color:#4A9FE5!important;
+  transform:translateY(-1px)!important;
+  box-shadow:0 2px 8px rgba(74,159,229,0.15)!important;
+}
+#childcarecrm-tour-form .fc-event .fc-content{
+  display:flex!important;align-items:center!important;justify-content:center!important;
+}
+#childcarecrm-tour-form .fc-event .fc-time,
+#childcarecrm-tour-form .fc-event .fc-title{
+  font-family:'Onest',sans-serif!important;font-size:13px!important;
+  font-weight:500!important;color:#0B1D3A!important;
+  float:none!important;
+}
+#childcarecrm-tour-form .fc-event .fc-time span{display:none!important}
+/* Selected event */
+#childcarecrm-tour-form .fc-event.fc-selected,
+#childcarecrm-tour-form .fc-event.selected-tour-time{
+  background:#4A9FE5!important;border-color:#4A9FE5!important;
+}
+#childcarecrm-tour-form .fc-event.fc-selected .fc-time,
+#childcarecrm-tour-form .fc-event.fc-selected .fc-title,
+#childcarecrm-tour-form .fc-event.selected-tour-time .fc-time,
+#childcarecrm-tour-form .fc-event.selected-tour-time .fc-title{color:#fff!important}
+/* Empty day cells */
+#childcarecrm-tour-form .fc-day{background:#fff!important}
+#childcarecrm-tour-form .fc-day.fc-today{background:#F0F7FE!important}
+/* Scroller */
+#childcarecrm-tour-form .fc-scroller{overflow:visible!important;height:auto!important}
+/* Back button / Change Time */
+#childcarecrm-tour-form .childcarecrm-form__back-button{
+  font-family:'Onest',sans-serif!important;font-size:14px!important;font-weight:500!important;
+  color:#4A9FE5!important;background:transparent!important;
+  border:1px solid #E2E8F0!important;border-radius:10px!important;
+  padding:12px 28px!important;cursor:pointer!important;margin-top:16px!important;
+  transition:border-color 0.2s!important;
+}
+#childcarecrm-tour-form .childcarecrm-form__back-button:hover{border-color:#4A9FE5!important}
+/* Step container */
+#childcarecrm-tour-form .childcarecrm-form__step{margin:0!important}
+/* Tour time display */
+#childcarecrm-tour-form .childcarecrm-form__pst-type-display{
+  font-family:'Onest',sans-serif!important;font-size:15px!important;
+  color:#0B1D3A!important;font-weight:500!important;
+  background:#F0F7FE!important;padding:12px 16px!important;
+  border-radius:8px!important;margin:8px 0!important;
+}
 /* Flatpickr calendar overrides */
 .flatpickr-calendar{font-family:'Onest',sans-serif!important;border-radius:12px!important;box-shadow:0 8px 32px rgba(11,29,58,0.12)!important;border:1px solid #E2E8F0!important}
 .flatpickr-day.selected,.flatpickr-day.selected:hover{background:#4A9FE5!important;border-color:#4A9FE5!important}
