@@ -197,7 +197,7 @@ function Nav({ current, setCurrent: setCurrent2 }) {
     window.addEventListener("scroll", h);
     return () => window.removeEventListener("scroll", h);
   }, []);
-  return /* @__PURE__ */ React.createElement("nav", { style: {
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("nav", { style: {
     position: "fixed",
     top: 0,
     left: 0,
@@ -234,7 +234,7 @@ function Nav({ current, setCurrent: setCurrent2 }) {
     cursor: "pointer",
     padding: 8,
     display: "none"
-  } }, open ? /* @__PURE__ */ React.createElement(X, { size: 22, color: "#FFFFFF" }) : /* @__PURE__ */ React.createElement(Menu, { size: 22, color: "#FFFFFF" }))), open && /* @__PURE__ */ React.createElement("div", { style: {
+  } }, open ? /* @__PURE__ */ React.createElement(X, { size: 22, color: "#FFFFFF" }) : /* @__PURE__ */ React.createElement(Menu, { size: 22, color: "#FFFFFF" })))), open && /* @__PURE__ */ React.createElement("div", { style: {
     position: "fixed",
     top: 0,
     left: 0,
@@ -266,7 +266,7 @@ function Nav({ current, setCurrent: setCurrent2 }) {
   } }, p.label))), /* @__PURE__ */ React.createElement("div", { style: { paddingTop: 20, flexShrink: 0 } }, /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 20, marginBottom: 16, justifyContent: "center" } }, /* @__PURE__ */ React.createElement("a", { href: "tel:6313853388", style: { display: "flex", alignItems: "center", gap: 8, fontFamily: F.b, fontSize: 13, color: C.navy, textDecoration: "none" } }, /* @__PURE__ */ React.createElement(Phone, { size: 16, color: C.sky, strokeWidth: 1.5 }), "(631) 385-3388"), /* @__PURE__ */ React.createElement("a", { href: "mailto:Admin@huntingtonmontessori.com", style: { display: "flex", alignItems: "center", gap: 8, fontFamily: F.b, fontSize: 13, color: C.navy, textDecoration: "none" } }, /* @__PURE__ */ React.createElement(Mail, { size: 16, color: C.sky, strokeWidth: 1.5 }), "Email Us")), /* @__PURE__ */ React.createElement(Btn, { full: true, onClick: () => {
     setCurrent2("admissions");
     setOpen(false);
-  } }, "Schedule a Tour ", /* @__PURE__ */ React.createElement(ArrowUpRight, { size: 14 })))));
+  } }, "Schedule a Tour ", /* @__PURE__ */ React.createElement(ArrowUpRight, { size: 14 })))))
 }
 function PageHeader({ tag, title, subtitle }) {
   return /* @__PURE__ */ React.createElement("section", { style: { paddingTop: 144, paddingBottom: 96, background: C.offWhite } }, /* @__PURE__ */ React.createElement("div", { style: { maxWidth: 1400, margin: "0 auto", padding: "0 48px" }, className: "rp" }, /* @__PURE__ */ React.createElement(Reveal, null, /* @__PURE__ */ React.createElement(Tag, null, tag), /* @__PURE__ */ React.createElement("h1", { style: {
