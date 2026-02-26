@@ -932,37 +932,51 @@ function BlogPage() {
 function CalendarPage() {
   const [viewMonth, setViewMonth] = useState(() => {
     const d = /* @__PURE__ */ new Date();
-    return { month: d.getMonth(), year: d.getFullYear() };
+    const m = d.getMonth(), y = d.getFullYear();
+    if (y < 2025 || (y === 2025 && m < 8)) return { month: 8, year: 2025 };
+    if (y > 2026 || (y === 2026 && m > 5)) return { month: 5, year: 2026 };
+    return { month: m, year: y };
   });
   const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   const dayLabels = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   const events = [
-    { date: "2026-09-02", title: "First Day of School", type: "milestone" },
-    { date: "2026-09-11", title: "Back-to-School Night", type: "community" },
-
-    { date: "2026-10-09", title: "Fall Harvest Festival", type: "community" },
-    { date: "2026-10-14", title: "Indigenous Peoples' Day \u2014 No School", type: "closure" },
-    { date: "2026-10-23", title: "Parent\u2013Guide Conferences", type: "parents" },
-    { date: "2026-11-03", title: "Election Day \u2014 No School", type: "closure" },
-    { date: "2026-11-11", title: "Veterans Day \u2014 No School", type: "closure" },
-    { date: "2026-11-25", title: "Thanksgiving Break Begins", type: "closure" },
-    { date: "2026-12-11", title: "Winter Concert & Art Show", type: "community" },
-    { date: "2026-12-21", title: "Winter Break Begins", type: "closure" },
-    { date: "2027-01-05", title: "School Resumes", type: "milestone" },
-    { date: "2027-01-19", title: "Martin Luther King Jr. Day \u2014 No School", type: "closure" },
-    { date: "2027-01-23", title: "Montessori Education Week Begins", type: "community" },
-    { date: "2027-02-16", title: "Presidents' Week \u2014 No School", type: "closure" },
-    { date: "2027-03-12", title: "Parent\u2013Guide Conferences", type: "parents" },
-    { date: "2027-03-19", title: "International Day of Peace Celebration", type: "community" },
-    { date: "2027-04-02", title: "Spring Break Begins", type: "closure" },
-    { date: "2027-04-13", title: "School Resumes", type: "milestone" },
-    { date: "2027-04-22", title: "Earth Day Garden Project", type: "community" },
-    { date: "2027-05-07", title: "Pre-K / Kindergarten Art Exhibition", type: "community" },
-
-    { date: "2027-05-28", title: "Elementary Going-Out Presentations", type: "community" },
-    { date: "2027-05-31", title: "Memorial Day \u2014 No School", type: "closure" },
-    { date: "2027-06-11", title: "End-of-Year Celebration", type: "milestone" },
-    { date: "2027-06-15", title: "Last Day of School", type: "milestone" }
+    { date: "2025-09-01", title: "No School \u2014 Labor Day", type: "closure" },
+    { date: "2025-09-02", title: "Faculty Meeting", type: "milestone" },
+    { date: "2025-09-03", title: "1st Day of School \u2014 Returning Pre-K & All K & Elementary", type: "milestone" },
+    { date: "2025-09-04", title: "1st Day of School \u2014 New Pre-K", type: "milestone" },
+    { date: "2025-09-08", title: "1st Day of School \u2014 Toddler Students", type: "milestone" },
+    { date: "2025-09-10", title: "Meet the Teacher (Evening)", type: "community" },
+    { date: "2025-09-23", title: "No School \u2014 Rosh Hashanah", type: "closure" },
+    { date: "2025-09-24", title: "No School \u2014 Rosh Hashanah", type: "closure" },
+    { date: "2025-10-02", title: "No School \u2014 Yom Kippur", type: "closure" },
+    { date: "2025-10-13", title: "No School \u2014 Columbus Day", type: "closure" },
+    { date: "2025-10-20", title: "No School \u2014 Diwali", type: "closure" },
+    { date: "2025-10-24", title: "At Risk Student Recommendations Due", type: "milestone" },
+    { date: "2025-11-04", title: "No School \u2014 Election Day / Faculty Meeting (All Staff Meeting)", type: "closure" },
+    { date: "2025-11-11", title: "No School \u2014 Veterans' Day", type: "closure" },
+    { date: "2025-11-24", title: "Report Cards Due", type: "milestone" },
+    { date: "2025-11-26", title: "No School \u2014 Thanksgiving Recess", type: "closure" },
+    { date: "2025-11-27", title: "No School \u2014 Thanksgiving", type: "closure" },
+    { date: "2025-11-28", title: "No School \u2014 Thanksgiving Recess", type: "closure" },
+    { date: "2025-12-01", title: "K & Elementary Evening Conferences (Class in session)", type: "parents" },
+    { date: "2025-12-04", title: "No School \u2014 K & Elementary Conferences (Pre-K & Toddler in session)", type: "parents" },
+    { date: "2025-12-22", title: "No School \u2014 Winter Recess Begins", type: "closure" },
+    { date: "2026-01-02", title: "No School \u2014 Winter Recess", type: "closure" },
+    { date: "2026-01-05", title: "Toddler/Pre-K Evening Conferences", type: "parents" },
+    { date: "2026-01-08", title: "No School \u2014 Toddler/Pre-K Day Conferences (K & Elem. in session)", type: "parents" },
+    { date: "2026-01-19", title: "No School \u2014 Martin Luther King Jr. Day", type: "closure" },
+    { date: "2026-02-16", title: "No School \u2014 February Recess", type: "closure" },
+    { date: "2026-02-20", title: "No School \u2014 February Recess", type: "closure" },
+    { date: "2026-03-02", title: "Start of Read Across America Week", type: "community" },
+    { date: "2026-03-05", title: "K & Elem. Evening Conferences", type: "parents" },
+    { date: "2026-03-09", title: "No School \u2014 K & Elementary Conferences (Pre-K & Toddler in session)", type: "parents" },
+    { date: "2026-03-30", title: "No School \u2014 End-of-Tri", type: "closure" },
+    { date: "2026-04-02", title: "No School \u2014 Spring Recess Begins", type: "closure" },
+    { date: "2026-04-10", title: "No School \u2014 Spring Recess", type: "closure" },
+    { date: "2026-05-19", title: "Report Cards Due", type: "milestone" },
+    { date: "2026-05-22", title: "No School \u2014 Memorial Day Weekend", type: "closure" },
+    { date: "2026-05-25", title: "No School \u2014 Memorial Day", type: "closure" },
+    { date: "2026-06-12", title: "Last Day of School", type: "milestone" }
   ];
   const typeStyles = {
     milestone: { color: C.sky, bg: C.skyFaint, label: "Milestone" },
@@ -1002,7 +1016,7 @@ function CalendarPage() {
     PageHeader,
     {
       tag: "School Calendar",
-      title: "Important dates & events",
+      title: "Important dates & events 2025\u20132026",
       subtitle: "Stay informed about school closures, community events, conferences, and milestones throughout the academic year."
     }
   ), /* @__PURE__ */ React.createElement("section", { style: { background: C.white, padding: "96px 0", borderTop: `1px solid ${C.border}` } }, /* @__PURE__ */ React.createElement("div", { style: { maxWidth: 900, margin: "0 auto", padding: "0 48px" }, className: "rp" }, /* @__PURE__ */ React.createElement(Reveal, null, /* @__PURE__ */ React.createElement("div", { style: { display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 48 } }, /* @__PURE__ */ React.createElement(
