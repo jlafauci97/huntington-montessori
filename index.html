@@ -846,6 +846,17 @@ function AdmissionsPage() {
         show_confirmation: true
       });
       crmForm.render();
+      setTimeout(function autoSelect() {
+        var sel = el.querySelector("select");
+        if (sel && sel.options.length > 1) {
+          sel.value = "1";
+          sel.dispatchEvent(new Event("change", { bubbles: true }));
+          var btn = el.querySelector("#childcarecrm-form__submit-button");
+          if (btn) btn.click();
+        } else {
+          setTimeout(autoSelect, 200);
+        }
+      }, 300);
     }
   }, []);
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement(
