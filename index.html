@@ -46,6 +46,77 @@ button:hover{opacity:.88}
 .step-row,.curriculum-row{grid-template-columns:1fr!important;gap:16px!important}
 .event-row{grid-template-columns:40px 1fr auto!important;gap:12px!important}
 }
+/* ChildCareCRM form overrides */
+#childcarecrm-tour-form .childcarecrm-form{font-family:'Onest',sans-serif}
+#childcarecrm-tour-form label{font-family:'Onest',sans-serif;font-size:13px;font-weight:500;color:#475569;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:8px;display:block}
+#childcarecrm-tour-form .childcarecrm-form__label-required-mark{color:#4A9FE5}
+#childcarecrm-tour-form .childcarecrm-form__control,
+#childcarecrm-tour-form select,
+#childcarecrm-tour-form input[type="text"],
+#childcarecrm-tour-form input[type="email"],
+#childcarecrm-tour-form input[type="tel"],
+#childcarecrm-tour-form textarea{
+  font-family:'Onest',sans-serif;font-size:15px;color:#0B1D3A;
+  width:100%!important;padding:14px 16px!important;
+  border:1px solid #E2E8F0!important;border-radius:10px!important;
+  background:#FAFBFD!important;outline:none!important;
+  transition:border-color 0.2s,box-shadow 0.2s;
+  -webkit-appearance:none;appearance:none;
+}
+#childcarecrm-tour-form select{
+  background:#FAFBFD url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23475569' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat right 16px center!important;
+  padding-right:40px!important;cursor:pointer;
+}
+#childcarecrm-tour-form .childcarecrm-form__control:focus,
+#childcarecrm-tour-form select:focus,
+#childcarecrm-tour-form input:focus,
+#childcarecrm-tour-form textarea:focus{
+  border-color:#4A9FE5!important;box-shadow:0 0 0 3px rgba(74,159,229,0.12)!important;
+}
+#childcarecrm-tour-form .childcarecrm-form__field{margin-bottom:24px}
+#childcarecrm-tour-form #childcarecrm-form__submit-button,
+#childcarecrm-tour-form #childcarecrm-form__confirm-button{
+  font-family:'Onest',sans-serif;font-size:15px;font-weight:500;
+  color:#fff!important;background:#4A9FE5!important;
+  border:none!important;border-radius:10px!important;
+  padding:14px 40px!important;cursor:pointer;
+  letter-spacing:0.03em;
+  transition:background 0.2s,transform 0.15s;
+  display:inline-block;margin-top:8px;
+}
+#childcarecrm-tour-form #childcarecrm-form__submit-button:hover,
+#childcarecrm-tour-form #childcarecrm-form__confirm-button:hover{
+  background:#3B8DD4!important;transform:translateY(-1px);
+}
+#childcarecrm-tour-form .childcarecrm-form__go-back-button{
+  font-family:'Onest',sans-serif;font-size:14px;font-weight:500;
+  color:#4A9FE5!important;background:transparent!important;
+  border:1px solid #E2E8F0!important;border-radius:10px!important;
+  padding:12px 32px!important;cursor:pointer;margin-top:8px;margin-right:12px;
+  transition:border-color 0.2s;
+}
+#childcarecrm-tour-form .childcarecrm-form__go-back-button:hover{border-color:#4A9FE5!important}
+#childcarecrm-tour-form .childcarecrm-form__confirmation-header{
+  font-family:'Instrument Serif',serif;font-size:24px;font-weight:400;
+  color:#0B1D3A;margin-bottom:20px;line-height:1.3;
+}
+#childcarecrm-tour-form .childcarecrm-form__disclaimer{
+  font-family:'Onest',sans-serif;font-size:12px;color:#94a3b8;
+  line-height:1.6;margin:16px 0;
+}
+#childcarecrm-tour-form .childcarecrm-form__footer{margin-top:8px}
+#childcarecrm-tour-form .childcarecrm-form__contact-row{
+  display:grid;grid-template-columns:1fr 1fr;gap:16px;
+}
+@media(max-width:640px){
+  #childcarecrm-tour-form .childcarecrm-form__contact-row{grid-template-columns:1fr}
+}
+/* Flatpickr calendar overrides */
+.flatpickr-calendar{font-family:'Onest',sans-serif!important;border-radius:12px!important;box-shadow:0 8px 32px rgba(11,29,58,0.12)!important;border:1px solid #E2E8F0!important}
+.flatpickr-day.selected,.flatpickr-day.selected:hover{background:#4A9FE5!important;border-color:#4A9FE5!important}
+.flatpickr-day:hover{background:rgba(74,159,229,0.1)!important}
+.flatpickr-months .flatpickr-month{height:40px}
+.flatpickr-current-month{font-family:'Onest',sans-serif!important;font-size:14px!important}
 </style>
 <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
 <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
