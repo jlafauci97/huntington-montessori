@@ -13,8 +13,10 @@ body{min-height:100vh}
 button:hover{opacity:.88}
 .desktop-nav{display:flex!important}
 .mobile-toggle{display:none!important}
+.mobile-overlay{display:none!important}
 @media(max-width:1024px){
 .desktop-nav{display:none!important}.mobile-toggle{display:block!important}
+.mobile-overlay{display:flex!important}
 .nav-inner{position:relative!important}
 .logo-group{margin-left:0!important;position:absolute!important;left:50%;transform:translateX(-50%)!important}
 .mobile-toggle{position:absolute!important;right:24px!important;top:50%;transform:translateY(-50%)!important}
@@ -237,7 +239,7 @@ function Nav({ current, setCurrent: setCurrent2 }) {
     cursor: "pointer",
     padding: 8,
     display: "none"
-  } }, open ? /* @__PURE__ */ React.createElement(X, { size: 22, color: "#FFFFFF" }) : /* @__PURE__ */ React.createElement(Menu, { size: 22, color: "#FFFFFF" })))), open && /* @__PURE__ */ React.createElement("div", { style: {
+  } }, open ? /* @__PURE__ */ React.createElement(X, { size: 22, color: "#FFFFFF" }) : /* @__PURE__ */ React.createElement(Menu, { size: 22, color: "#FFFFFF" })))), open && /* @__PURE__ */ React.createElement("div", { className: "mobile-overlay", style: {
     position: "fixed",
     top: 0,
     left: 0,
