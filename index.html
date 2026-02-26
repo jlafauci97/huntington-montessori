@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Huntington Montessori School — Preview</title>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Onest:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" type="text/css" href="https://live.childcarecrm.com/form/v1.css">
+<script type="text/javascript" src="https://live.childcarecrm.com/form/v1.js"></script>
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
@@ -752,6 +754,29 @@ function CurriculumPage() {
   ].map((item, j) => /* @__PURE__ */ React.createElement(Reveal, { key: j, delay: j * 0.04 }, /* @__PURE__ */ React.createElement("div", { style: { background: C.white, padding: "36px 32px" } }, /* @__PURE__ */ React.createElement("h4", { style: { fontFamily: F.d, fontSize: 20, color: C.navy, marginBottom: 12 } }, item.title), /* @__PURE__ */ React.createElement("p", { style: { fontFamily: F.b, fontSize: 14, color: C.textSec, lineHeight: 1.8 } }, item.desc))))))), /* @__PURE__ */ React.createElement("section", { style: { background: C.skyFaint, padding: "80px 0", borderTop: `1px solid ${C.border}` } }, /* @__PURE__ */ React.createElement("div", { style: { maxWidth: 640, margin: "0 auto", padding: "0 48px", textAlign: "center" }, className: "rp" }, /* @__PURE__ */ React.createElement(Reveal, null, /* @__PURE__ */ React.createElement("h3", { style: { fontFamily: F.d, fontSize: 30, color: C.navy, marginBottom: 16 } }, "See the curriculum in action"), /* @__PURE__ */ React.createElement("p", { style: { fontFamily: F.b, fontSize: 16, color: C.textSec, lineHeight: 1.8, marginBottom: 40 } }, "The best way to understand these materials and methods is to observe a classroom during the morning learning block. Schedule a visit and see the difference for yourself."), /* @__PURE__ */ React.createElement(Btn, { onClick: () => setCurrent("admissions") }, "Schedule a Tour ", /* @__PURE__ */ React.createElement(ArrowRight, { size: 14 }))))));
 }
 function AdmissionsPage() {
+  useEffect(() => {
+    const el = document.getElementById("childcarecrm-tour-form");
+    if (el && window.ChildCareCRM) {
+      el.innerHTML = "";
+      var crmForm = new ChildCareCRM.Forms.Form({
+        centerId: null,
+        customerId: "930a61bcf63ac5f633671eeff42f454f",
+        formId: "1974db75-ef78-4506-acaa-d581aab8cbb8",
+        selector: "#childcarecrm-tour-form",
+        labels: {
+          "next": "Next",
+          "submit": "Submit",
+          "additional_child": "Additional Child",
+          "remove_child": "Remove Child",
+          "change_time": "Change Time",
+          "disclaimer_text": "By clicking \"Submit\" I agree to be sent text and email notifications from Huntington Montessori School."
+        },
+        callback: null,
+        show_confirmation: true
+      });
+      crmForm.render();
+    }
+  }, []);
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement(
     PageHeader,
     {
@@ -823,7 +848,7 @@ function AdmissionsPage() {
     { q: "What if my child has never been in a school setting before?", a: "Many of our students are experiencing their first school environment. Our phased start process, low student-to-teacher ratios, and the inherently gentle pace of a Montessori classroom make it an ideal first school experience. Children who are new to group settings often thrive because the environment is designed to respect their individual pace." },
     { q: "Do you accept children with learning differences?", a: "We welcome children with a range of learning profiles. During the admissions process, we discuss each child's needs openly to determine if our environment can serve them well. We are not a specialized therapeutic school, but many children with mild learning differences flourish in Montessori because of the individualized pace and multi-sensory materials." },
     { q: "Can I observe a classroom before applying?", a: "Absolutely \u2014 we strongly encourage it. Classroom observations during the morning learning block are available by appointment and are the single best way to understand what makes Montessori different. Contact our admissions office to schedule a visit." }
-  ].map((item, j) => /* @__PURE__ */ React.createElement(Reveal, { key: j, delay: j * 0.03 }, /* @__PURE__ */ React.createElement("div", { style: { padding: "32px 0", borderBottom: j < 5 ? `1px solid ${C.border}` : "none" } }, /* @__PURE__ */ React.createElement("h4", { style: { fontFamily: F.d, fontSize: 20, color: C.navy, lineHeight: 1.4, marginBottom: 12 } }, item.q), /* @__PURE__ */ React.createElement("p", { style: { fontFamily: F.b, fontSize: 15, color: C.textSec, lineHeight: 1.8 } }, item.a)))))), /* @__PURE__ */ React.createElement("section", { style: { background: C.navy, padding: "96px 48px", textAlign: "center", position: "relative", overflow: "hidden" } }, /* @__PURE__ */ React.createElement("div", { style: {
+  ].map((item, j) => /* @__PURE__ */ React.createElement(Reveal, { key: j, delay: j * 0.03 }, /* @__PURE__ */ React.createElement("div", { style: { padding: "32px 0", borderBottom: j < 5 ? `1px solid ${C.border}` : "none" } }, /* @__PURE__ */ React.createElement("h4", { style: { fontFamily: F.d, fontSize: 20, color: C.navy, lineHeight: 1.4, marginBottom: 12 } }, item.q), /* @__PURE__ */ React.createElement("p", { style: { fontFamily: F.b, fontSize: 15, color: C.textSec, lineHeight: 1.8 } }, item.a)))))), /* @__PURE__ */ React.createElement("section", { style: { background: C.offWhite, padding: "96px 0", borderTop: `1px solid ${C.border}` } }, /* @__PURE__ */ React.createElement("div", { style: { maxWidth: 800, margin: "0 auto", padding: "0 48px" }, className: "rp" }, /* @__PURE__ */ React.createElement(Reveal, null, /* @__PURE__ */ React.createElement(Tag, null, "Schedule a Tour"), /* @__PURE__ */ React.createElement("h2", { style: { fontFamily: F.d, fontSize: "clamp(28px,3vw,40px)", fontWeight: 400, color: C.navy, lineHeight: 1.2, marginTop: 16, marginBottom: 20 } }, "Book your visit"), /* @__PURE__ */ React.createElement(Divider, null), /* @__PURE__ */ React.createElement("p", { style: { fontFamily: F.b, fontSize: 16, color: C.textSec, lineHeight: 1.85, marginBottom: 32 } }, "Select a date and time that works best for your family. We\u2019ll confirm your appointment and send you everything you need to prepare for your tour.")), /* @__PURE__ */ React.createElement("div", { id: "childcarecrm-tour-form", style: { minHeight: 400, background: C.white, borderRadius: 12, padding: 32, border: `1px solid ${C.border}` } }))), /* @__PURE__ */ React.createElement("section", { style: { background: C.navy, padding: "96px 48px", textAlign: "center", position: "relative", overflow: "hidden" } }, /* @__PURE__ */ React.createElement("div", { style: {
     position: "absolute",
     top: "50%",
     left: "50%",
