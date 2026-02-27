@@ -275,6 +275,8 @@ details summary svg{transition:transform 0.3s ease}
 <body>
 <div id="root"></div>
 <script>
+document.addEventListener("error",function(e){var t=e.target;if(t.tagName==="IMG"&&t.src){var r=parseInt(t.dataset.retries||"0",10);if(r<3){t.dataset.retries=String(r+1);setTimeout(function(){var s=t.src;t.src="";t.src=s},1500*(r+1))}}},true);
+setInterval(function(){document.querySelectorAll("img").forEach(function(img){if(img.src&&img.complete&&img.naturalWidth===0){var r=parseInt(img.dataset.retries||"0",10);if(r<3){img.dataset.retries=String(r+1);var s=img.src;img.src="";img.src=s}}})},2000);
 const IMG={heroCard:"images/hero.jpg",about:"images/about.jpg",philosophy:"images/philosophy.jpg",gallery:["images/gallery-classroom.jpg","images/gallery-garden.jpg","images/gallery-practical.jpg","images/gallery-research.jpg","images/gallery-sensorial.jpg","images/gallery-community.jpg","images/gallery-art.jpg","images/gallery-toddler.jpg","images/gallery-math.jpg"],toddlerProgram:"images/sorting-toys.jpg",preKProgram:"images/bead-frame.jpg",elemProgram:"images/hero.jpg",practicalLife:"images/gallery-practical.jpg",sensorial:"images/gallery-sensorial.jpg",language:"images/language-materials.jpg",math:"images/golden-beads-overhead.jpg",cultural:"images/gallery-garden.jpg",redRods:"images/red-rods.jpg",beadChains:"images/bead-chains.jpg",busyBoard:"images/busy-board.jpg",pegDolls:"images/peg-dolls.jpg",woodenToys:"images/wooden-toys.jpg",parentChild:"images/parent-child.jpg",seguinBoard:"images/seguin-board.jpg"};
 const React = window.React;
 const ReactDOM = window.ReactDOM;
