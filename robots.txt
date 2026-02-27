@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://jlafauci97.github.io/huntington-montessori/sitemap.xml

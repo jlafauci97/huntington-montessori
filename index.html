@@ -3,7 +3,66 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Huntington Montessori School — Preview</title>
+<title>Huntington Montessori School | Montessori Education for Ages 2–12 in South Huntington, NY</title>
+<meta name="description" content="Huntington Montessori School offers authentic Montessori education for children ages 2–12 in South Huntington, NY. Nurturing independence, creativity, and a love of learning through hands-on discovery. Now enrolling for 2026–2027."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://jlafauci97.github.io/huntington-montessori/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Huntington Montessori School"/>
+<meta property="og:title" content="Huntington Montessori School | Montessori Education Ages 2–12"/>
+<meta property="og:description" content="Authentic Montessori education for children ages 2–12 in South Huntington, NY. Hands-on learning, 8:1 student-teacher ratio, and 25+ years of excellence."/>
+<meta property="og:url" content="https://jlafauci97.github.io/huntington-montessori/"/>
+<meta property="og:image" content="https://jlafauci97.github.io/huntington-montessori/images/hero.jpg"/>
+<meta property="og:image:width" content="612"/>
+<meta property="og:image:height" content="408"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Huntington Montessori School | Montessori Education Ages 2–12"/>
+<meta name="twitter:description" content="Authentic Montessori education for children ages 2–12 in South Huntington, NY. Hands-on learning, 8:1 student-teacher ratio, and 25+ years of excellence."/>
+<meta name="twitter:image" content="https://jlafauci97.github.io/huntington-montessori/images/hero.jpg"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "School",
+  "name": "Huntington Montessori School",
+  "description": "Authentic Montessori education for children ages 2–12, nurturing independence, creativity, and a genuine love of learning through hands-on discovery.",
+  "url": "https://jlafauci97.github.io/huntington-montessori/",
+  "logo": "https://jlafauci97.github.io/huntington-montessori/images/logo.png",
+  "image": "https://jlafauci97.github.io/huntington-montessori/images/hero.jpg",
+  "telephone": "+1-631-385-3388",
+  "email": "Admin@huntingtonmontessori.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "165 Pidgeon Hill Rd",
+    "addressLocality": "South Huntington",
+    "addressRegion": "NY",
+    "postalCode": "11746",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 40.8207,
+    "longitude": -73.3976
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+    "opens": "08:00",
+    "closes": "18:00"
+  },
+  "sameAs": [],
+  "areaServed": {
+    "@type": "City",
+    "name": "Huntington, NY"
+  },
+  "priceRange": "$$",
+  "additionalType": "https://schema.org/EducationalOrganization",
+  "educationalCredentialAwarded": "Montessori Certificate",
+  "numberOfEmployees": {
+    "@type": "QuantitativeValue",
+    "value": 15
+  }
+}
+</script>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Onest:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" type="text/css" href="https://live.childcarecrm.com/form/v1.css">
 <script type="text/javascript" src="https://live.childcarecrm.com/form/v1.js"></script>
@@ -278,6 +337,7 @@ details summary svg{transition:transform 0.3s ease}
 function _retryImg(img){var r=parseInt(img.dataset.retries||"0",10);if(r<4){img.dataset.retries=String(r+1);setTimeout(function(){var s=img.getAttribute("src");var base=s.split("?")[0];img.src=base+"?r="+Date.now()},1200*(r+1))}}
 document.addEventListener("error",function(e){if(e.target.tagName==="IMG")_retryImg(e.target)},true);
 setInterval(function(){document.querySelectorAll("img").forEach(function(img){if(img.src&&img.complete&&img.naturalWidth===0)_retryImg(img)})},3000);
+new MutationObserver(function(){document.querySelectorAll("img:not([loading])").forEach(function(img){var s=img.getAttribute("src")||"";if(s.indexOf("logo")===-1)img.setAttribute("loading","lazy")})}).observe(document.getElementById("root"),{childList:true,subtree:true});
 const IMG={heroCard:"images/hero.jpg",about:"images/about.jpg",philosophy:"images/philosophy.jpg",gallery:["images/gallery-classroom.jpg","images/gallery-garden.jpg","images/gallery-practical.jpg","images/gallery-research.jpg","images/gallery-sensorial.jpg","images/gallery-community.jpg","images/gallery-art.jpg","images/gallery-toddler.jpg","images/gallery-math.jpg"],toddlerProgram:"images/sorting-toys.jpg",preKProgram:"images/bead-frame.jpg",elemProgram:"images/hero.jpg",practicalLife:"images/gallery-practical.jpg",sensorial:"images/gallery-sensorial.jpg",language:"images/language-materials.jpg",math:"images/golden-beads-overhead.jpg",cultural:"images/gallery-garden.jpg",redRods:"images/red-rods.jpg",beadChains:"images/bead-chains.jpg",busyBoard:"images/busy-board.jpg",pegDolls:"images/peg-dolls.jpg",woodenToys:"images/wooden-toys.jpg",parentChild:"images/parent-child.jpg",seguinBoard:"images/seguin-board.jpg"};
 const React = window.React;
 const ReactDOM = window.ReactDOM;
@@ -431,7 +491,7 @@ function Nav({ current, setCurrent: setCurrent2 }) {
     window.addEventListener("scroll", h);
     return () => window.removeEventListener("scroll", h);
   }, []);
-  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("nav", { style: {
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("nav", { "aria-label": "Main navigation", role: "navigation", style: {
     position: "fixed",
     top: 0,
     left: 0,
@@ -450,7 +510,7 @@ function Nav({ current, setCurrent: setCurrent2 }) {
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between"
-  }, className: "nav-inner" }, /* @__PURE__ */ React.createElement("div", { className: "logo-group", style: { cursor: "pointer", display: "flex", alignItems: "center", gap: 10, marginLeft: -140 }, onClick: () => { setCurrent2("home"); setOpen(false); } }, /* @__PURE__ */ React.createElement("img", { src: LOGO_SRC, style: { width: 174, height: 174, objectFit: "contain" }, alt: "HMS" }), /* @__PURE__ */ React.createElement("div", { style: { marginLeft: -20 } }, /* @__PURE__ */ React.createElement("div", { style: { fontFamily: F.logo, fontSize: 22, fontWeight: 400, color: "#FFFFFF", lineHeight: 1.05, letterSpacing: "0.04em" } }, "Huntington"), /* @__PURE__ */ React.createElement("div", { style: { fontFamily: F.logo, fontSize: 22, fontWeight: 400, color: "#FFFFFF", lineHeight: 1.05, letterSpacing: "0.04em" } }, "Montessori"), /* @__PURE__ */ React.createElement("div", { style: { fontFamily: F.nav, fontSize: 9, fontWeight: 300, color: "rgba(255,255,255,0.85)", letterSpacing: "0.28em", textTransform: "uppercase", marginTop: 2 } }, "School"))), /* @__PURE__ */ React.createElement("div", { className: "desktop-nav", style: { display: "flex", alignItems: "center" } }, pages.map((p) => /* @__PURE__ */ React.createElement("button", { key: p.id, onClick: () => setCurrent2(p.id), style: {
+  }, className: "nav-inner" }, /* @__PURE__ */ React.createElement("div", { className: "logo-group", role: "button", "aria-label": "Huntington Montessori School — Go to homepage", tabIndex: 0, style: { cursor: "pointer", display: "flex", alignItems: "center", gap: 10, marginLeft: -140 }, onClick: () => { setCurrent2("home"); setOpen(false); }, onKeyDown: (e) => { if(e.key==="Enter"){setCurrent2("home");setOpen(false);} } }, /* @__PURE__ */ React.createElement("img", { src: LOGO_SRC, style: { width: 174, height: 174, objectFit: "contain" }, alt: "Huntington Montessori School logo" }), /* @__PURE__ */ React.createElement("div", { style: { marginLeft: -20 } }, /* @__PURE__ */ React.createElement("div", { style: { fontFamily: F.logo, fontSize: 22, fontWeight: 400, color: "#FFFFFF", lineHeight: 1.05, letterSpacing: "0.04em" } }, "Huntington"), /* @__PURE__ */ React.createElement("div", { style: { fontFamily: F.logo, fontSize: 22, fontWeight: 400, color: "#FFFFFF", lineHeight: 1.05, letterSpacing: "0.04em" } }, "Montessori"), /* @__PURE__ */ React.createElement("div", { style: { fontFamily: F.nav, fontSize: 9, fontWeight: 300, color: "rgba(255,255,255,0.85)", letterSpacing: "0.28em", textTransform: "uppercase", marginTop: 2 } }, "School"))), /* @__PURE__ */ React.createElement("div", { className: "desktop-nav", style: { display: "flex", alignItems: "center" } }, pages.map((p) => /* @__PURE__ */ React.createElement("button", { key: p.id, onClick: () => setCurrent2(p.id), style: {
     background: "none",
     border: "none",
     cursor: "pointer",
@@ -462,7 +522,7 @@ function Nav({ current, setCurrent: setCurrent2 }) {
     textTransform: "uppercase",
     color: current === p.id ? C.sky : "rgba(255,255,255,0.85)",
     transition: "color 0.2s"
-  } }, p.label)), /* @__PURE__ */ React.createElement("div", { style: { width: 1, height: 20, background: "rgba(255,255,255,0.15)", margin: "0 16px" } }), /* @__PURE__ */ React.createElement("a", { href: "tel:6313853388", style: { display: "flex", alignItems: "center", justifyContent: "center", padding: 8, transition: "opacity 0.2s" }, onMouseEnter: (e) => e.currentTarget.style.opacity = "0.7", onMouseLeave: (e) => e.currentTarget.style.opacity = "1" }, /* @__PURE__ */ React.createElement(Phone, { size: 18, color: "#FFFFFF", strokeWidth: 1.5 })), /* @__PURE__ */ React.createElement("a", { href: "mailto:Admin@huntingtonmontessori.com", style: { display: "flex", alignItems: "center", justifyContent: "center", padding: 8, marginRight: 12, transition: "opacity 0.2s" }, onMouseEnter: (e) => e.currentTarget.style.opacity = "0.7", onMouseLeave: (e) => e.currentTarget.style.opacity = "1" }, /* @__PURE__ */ React.createElement(Mail, { size: 18, color: "#FFFFFF", strokeWidth: 1.5 })), /* @__PURE__ */ React.createElement(Btn, { variant: "sky", onClick: () => setCurrent2("admissions") }, "Schedule a Tour ", /* @__PURE__ */ React.createElement(ArrowUpRight, { size: 14 }))), /* @__PURE__ */ React.createElement("button", { className: "mobile-toggle", onClick: () => setOpen(!open), style: {
+  } }, p.label)), /* @__PURE__ */ React.createElement("div", { style: { width: 1, height: 20, background: "rgba(255,255,255,0.15)", margin: "0 16px" } }), /* @__PURE__ */ React.createElement("a", { href: "tel:6313853388", "aria-label": "Call us at (631) 385-3388", style: { display: "flex", alignItems: "center", justifyContent: "center", padding: 8, transition: "opacity 0.2s" }, onMouseEnter: (e) => e.currentTarget.style.opacity = "0.7", onMouseLeave: (e) => e.currentTarget.style.opacity = "1" }, /* @__PURE__ */ React.createElement(Phone, { size: 18, color: "#FFFFFF", strokeWidth: 1.5 })), /* @__PURE__ */ React.createElement("a", { href: "mailto:Admin@huntingtonmontessori.com", "aria-label": "Email us", style: { display: "flex", alignItems: "center", justifyContent: "center", padding: 8, marginRight: 12, transition: "opacity 0.2s" }, onMouseEnter: (e) => e.currentTarget.style.opacity = "0.7", onMouseLeave: (e) => e.currentTarget.style.opacity = "1" }, /* @__PURE__ */ React.createElement(Mail, { size: 18, color: "#FFFFFF", strokeWidth: 1.5 })), /* @__PURE__ */ React.createElement(Btn, { variant: "sky", onClick: () => setCurrent2("admissions") }, "Schedule a Tour ", /* @__PURE__ */ React.createElement(ArrowUpRight, { size: 14 }))), /* @__PURE__ */ React.createElement("button", { className: "mobile-toggle", onClick: () => setOpen(!open), "aria-label": open ? "Close menu" : "Open menu", "aria-expanded": open, style: {
     background: "none",
     border: "none",
     cursor: "pointer",
@@ -646,7 +706,7 @@ function HomePage({ setCurrent: setCurrent2 }) {
       onMouseEnter: (e) => e.currentTarget.style.background = C.skyFaint,
       onMouseLeave: (e) => e.currentTarget.style.background = C.white
     },
-    /* @__PURE__ */ React.createElement("img", { src: p.img, alt: p.title, style: { width: "100%", height: 200, objectFit: "cover", marginBottom: 24 } }),
+    /* @__PURE__ */ React.createElement("img", { src: p.img, alt: p.title, loading: "lazy", style: { width: "100%", height: 200, objectFit: "cover", marginBottom: 24 } }),
     /* @__PURE__ */ React.createElement(p.icon, { size: 28, color: C.sky, strokeWidth: 1.5 }),
     /* @__PURE__ */ React.createElement("h3", { style: { fontFamily: F.d, fontSize: 26, fontWeight: 400, color: C.navy, marginTop: 28, lineHeight: 1.2 } }, p.title),
     /* @__PURE__ */ React.createElement("div", { style: {
@@ -1638,13 +1698,13 @@ function ContactPage() {
   )))));
 }
 function Footer({ setCurrent: setCurrent2 }) {
-  return /* @__PURE__ */ React.createElement("footer", { style: { background: C.navy, borderTop: `1px solid ${C.border}` } }, /* @__PURE__ */ React.createElement("div", { style: { maxWidth: 1400, margin: "0 auto", padding: "80px 48px 48px" } }, /* @__PURE__ */ React.createElement("div", { style: {
+  return /* @__PURE__ */ React.createElement("footer", { role: "contentinfo", "aria-label": "Site footer", style: { background: C.navy, borderTop: `1px solid ${C.border}` } }, /* @__PURE__ */ React.createElement("div", { style: { maxWidth: 1400, margin: "0 auto", padding: "80px 48px 48px" } }, /* @__PURE__ */ React.createElement("div", { style: {
     display: "grid",
     gridTemplateColumns: "2fr 1fr 1fr 1fr",
     gap: 64,
     paddingBottom: 64,
     borderBottom: "1px solid rgba(255,255,255,0.08)"
-  }, className: "footer-grid" }, /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", { style: { display: "flex", alignItems: "center", gap: 12, marginBottom: 24 } }, /* @__PURE__ */ React.createElement("img", { src: LOGO_SRC, style: { width: 144, height: 144, objectFit: "contain" }, alt: "HMS" }), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", { style: { fontFamily: F.logo, fontSize: 22, fontWeight: 400, color: "#FFFFFF", lineHeight: 1.05, letterSpacing: "0.04em" } }, "Huntington"), /* @__PURE__ */ React.createElement("div", { style: { fontFamily: F.logo, fontSize: 22, fontWeight: 400, color: "#FFFFFF", lineHeight: 1.05, letterSpacing: "0.04em" } }, "Montessori"), /* @__PURE__ */ React.createElement("div", { style: { fontFamily: F.nav, fontSize: 9, fontWeight: 300, color: "rgba(255,255,255,0.85)", letterSpacing: "0.28em", textTransform: "uppercase", marginTop: 2 } }, "School"))), /* @__PURE__ */ React.createElement("p", { style: { fontFamily: F.b, fontSize: 14, color: "rgba(255,255,255,0.4)", lineHeight: 1.8, maxWidth: 280, marginBottom: 24 } }, "Nurturing independence, creativity, and a lifelong love of learning through authentic Montessori education."), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", alignItems: "flex-start", gap: 10, fontFamily: F.b, fontSize: 14, color: "rgba(255,255,255,0.5)", marginBottom: 12, lineHeight: 1.6 } }, /* @__PURE__ */ React.createElement(MapPin, { size: 16, color: C.sky, strokeWidth: 1.5, style: { marginTop: 3, flexShrink: 0 } }), "165 Pidgeon Hill Road, South Huntington, NY 11746"), /* @__PURE__ */ React.createElement("a", { href: "tel:6313853388", style: { display: "flex", alignItems: "center", gap: 10, fontFamily: F.b, fontSize: 14, color: "rgba(255,255,255,0.5)", textDecoration: "none", marginBottom: 12, transition: "color 0.2s" }, onMouseEnter: (e) => e.currentTarget.style.color = "rgba(255,255,255,0.9)", onMouseLeave: (e) => e.currentTarget.style.color = "rgba(255,255,255,0.5)" }, /* @__PURE__ */ React.createElement(Phone, { size: 16, color: C.sky, strokeWidth: 1.5 }), "(631) 385-3388"), /* @__PURE__ */ React.createElement("a", { href: "mailto:Admin@huntingtonmontessori.com", style: { display: "flex", alignItems: "center", gap: 10, fontFamily: F.b, fontSize: 14, color: "rgba(255,255,255,0.5)", textDecoration: "none", transition: "color 0.2s" }, onMouseEnter: (e) => e.currentTarget.style.color = "rgba(255,255,255,0.9)", onMouseLeave: (e) => e.currentTarget.style.color = "rgba(255,255,255,0.5)" }, /* @__PURE__ */ React.createElement(Mail, { size: 16, color: C.sky, strokeWidth: 1.5 }), "Admin@huntingtonmontessori.com")), [
+  }, className: "footer-grid" }, /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", { style: { display: "flex", alignItems: "center", gap: 12, marginBottom: 24 } }, /* @__PURE__ */ React.createElement("img", { src: LOGO_SRC, style: { width: 144, height: 144, objectFit: "contain" }, alt: "Huntington Montessori School logo" }), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", { style: { fontFamily: F.logo, fontSize: 22, fontWeight: 400, color: "#FFFFFF", lineHeight: 1.05, letterSpacing: "0.04em" } }, "Huntington"), /* @__PURE__ */ React.createElement("div", { style: { fontFamily: F.logo, fontSize: 22, fontWeight: 400, color: "#FFFFFF", lineHeight: 1.05, letterSpacing: "0.04em" } }, "Montessori"), /* @__PURE__ */ React.createElement("div", { style: { fontFamily: F.nav, fontSize: 9, fontWeight: 300, color: "rgba(255,255,255,0.85)", letterSpacing: "0.28em", textTransform: "uppercase", marginTop: 2 } }, "School"))), /* @__PURE__ */ React.createElement("p", { style: { fontFamily: F.b, fontSize: 14, color: "rgba(255,255,255,0.4)", lineHeight: 1.8, maxWidth: 280, marginBottom: 24 } }, "Nurturing independence, creativity, and a lifelong love of learning through authentic Montessori education."), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", alignItems: "flex-start", gap: 10, fontFamily: F.b, fontSize: 14, color: "rgba(255,255,255,0.5)", marginBottom: 12, lineHeight: 1.6 } }, /* @__PURE__ */ React.createElement(MapPin, { size: 16, color: C.sky, strokeWidth: 1.5, style: { marginTop: 3, flexShrink: 0 } }), "165 Pidgeon Hill Road, South Huntington, NY 11746"), /* @__PURE__ */ React.createElement("a", { href: "tel:6313853388", style: { display: "flex", alignItems: "center", gap: 10, fontFamily: F.b, fontSize: 14, color: "rgba(255,255,255,0.5)", textDecoration: "none", marginBottom: 12, transition: "color 0.2s" }, onMouseEnter: (e) => e.currentTarget.style.color = "rgba(255,255,255,0.9)", onMouseLeave: (e) => e.currentTarget.style.color = "rgba(255,255,255,0.5)" }, /* @__PURE__ */ React.createElement(Phone, { size: 16, color: C.sky, strokeWidth: 1.5 }), "(631) 385-3388"), /* @__PURE__ */ React.createElement("a", { href: "mailto:Admin@huntingtonmontessori.com", style: { display: "flex", alignItems: "center", gap: 10, fontFamily: F.b, fontSize: 14, color: "rgba(255,255,255,0.5)", textDecoration: "none", transition: "color 0.2s" }, onMouseEnter: (e) => e.currentTarget.style.color = "rgba(255,255,255,0.9)", onMouseLeave: (e) => e.currentTarget.style.color = "rgba(255,255,255,0.5)" }, /* @__PURE__ */ React.createElement(Mail, { size: 16, color: C.sky, strokeWidth: 1.5 }), "Admin@huntingtonmontessori.com")), [
     { t: "Programs", links: [["Toddler Community", "programs"], ["Pre-K / Kindergarten", "programs"], ["Elementary", "programs"]] },
     { t: "Families", links: [["Admissions", "admissions"], ["Parents", "parents"], ["Blog", "blog"]] },
     { t: "School", links: [["About", "about"], ["Curriculum", "curriculum"], ["Contact", "contact"]] }
@@ -1667,15 +1727,44 @@ function Footer({ setCurrent: setCurrent2 }) {
     label
   ))))), /* @__PURE__ */ React.createElement("div", { style: { paddingTop: 48, paddingBottom: 32 } }, /* @__PURE__ */ React.createElement("div", { style: { fontFamily: F.b, fontSize: 11, color: "rgba(255,255,255,0.3)", letterSpacing: "0.14em", textTransform: "uppercase", marginBottom: 16 } }, "Find Us"), /* @__PURE__ */ React.createElement("iframe", { src: "https://www.google.com/maps?q=165+Pidgeon+Hill+Rd,+South+Huntington,+NY+11746&output=embed", style: { width: "100%", height: 250, border: "none", borderRadius: 8, opacity: 0.85 }, allowFullScreen: true, loading: "lazy", referrerPolicy: "no-referrer-when-downgrade" })), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", justifyContent: "space-between", alignItems: "center", paddingTop: 32, flexWrap: "wrap", gap: 16 } }, /* @__PURE__ */ React.createElement("div", { style: { fontFamily: F.b, fontSize: 12, color: "rgba(255,255,255,0.25)" } }, "\xA9 2026 Huntington Montessori School"), /* @__PURE__ */ React.createElement("div", { style: { fontFamily: F.b, fontSize: 12, color: "rgba(255,255,255,0.25)", display: "flex", gap: 24 } }, /* @__PURE__ */ React.createElement("span", { style: { cursor: "pointer" } }, "Privacy Policy"), /* @__PURE__ */ React.createElement("span", { style: { cursor: "pointer" } }, "Terms of Use")))));
 }
+const PAGE_META = {
+  home: { title: "Huntington Montessori School | Montessori Education for Ages 2–12 in South Huntington, NY", desc: "Huntington Montessori School offers authentic Montessori education for children ages 2–12 in South Huntington, NY. Nurturing independence, creativity, and a love of learning through hands-on discovery." },
+  about: { title: "About Us | Huntington Montessori School", desc: "Learn about Huntington Montessori School's 25+ year history, our dedicated faculty, and our commitment to authentic Montessori education in South Huntington, NY." },
+  programs: { title: "Programs | Toddler, Pre-K & Elementary | Huntington Montessori School", desc: "Explore our Montessori programs for toddlers (ages 2–3), Pre-K/Kindergarten (ages 3–6), and Elementary (ages 6–12) at Huntington Montessori School." },
+  curriculum: { title: "Curriculum | Huntington Montessori School", desc: "Discover our Montessori curriculum covering practical life, sensorial, language, mathematics, and cultural studies for children ages 2–12." },
+  admissions: { title: "Admissions & Schedule a Tour | Huntington Montessori School", desc: "Apply to Huntington Montessori School. Schedule a tour, learn about tuition, and start the enrollment process for the 2026–2027 school year." },
+  calendar: { title: "School Calendar | Huntington Montessori School", desc: "View the Huntington Montessori School calendar for important dates, events, holidays, and parent-teacher conferences." },
+  parents: { title: "Parent Resources | Huntington Montessori School", desc: "Resources for Huntington Montessori families including Montessori materials guide, recommended reading, and community events." },
+  gallery: { title: "Gallery | Huntington Montessori School", desc: "Browse photos of our Montessori classrooms, students, materials, and community at Huntington Montessori School." },
+  blog: { title: "Blog | Huntington Montessori School", desc: "Read articles about Montessori education, child development, and school updates from Huntington Montessori School." },
+  contact: { title: "Contact Us | Huntington Montessori School", desc: "Contact Huntington Montessori School at (631) 385-3388 or Admin@huntingtonmontessori.com. Located at 165 Pidgeon Hill Rd, South Huntington, NY 11746." }
+};
+function getHashPage() { var h = window.location.hash.replace("#",""); return PAGE_META[h] ? h : "home"; }
 function App() {
-  const [current, setCurrent2] = useState("home");
+  const [current, setCurrent2] = useState(getHashPage);
+  const navigate = (pg) => { window.location.hash = pg === "home" ? "" : pg; setCurrent2(pg); };
+  useEffect(() => {
+    const onHash = () => setCurrent2(getHashPage());
+    window.addEventListener("hashchange", onHash);
+    return () => window.removeEventListener("hashchange", onHash);
+  }, []);
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
+    var m = PAGE_META[current] || PAGE_META.home;
+    document.title = m.title;
+    var descTag = document.querySelector('meta[name="description"]');
+    if (descTag) descTag.setAttribute("content", m.desc);
+    var ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) ogTitle.setAttribute("content", m.title);
+    var ogDesc = document.querySelector('meta[property="og:description"]');
+    if (ogDesc) ogDesc.setAttribute("content", m.desc);
+    var canon = document.querySelector('link[rel="canonical"]');
+    if (canon) canon.setAttribute("href", "https://jlafauci97.github.io/huntington-montessori/" + (current === "home" ? "" : "#" + current));
   }, [current]);
   const P = {
-    home: () => /* @__PURE__ */ React.createElement(HomePage, { setCurrent: setCurrent2 }),
+    home: () => /* @__PURE__ */ React.createElement(HomePage, { setCurrent: navigate }),
     about: AboutPage,
-    programs: () => /* @__PURE__ */ React.createElement(ProgramsPage, { setCurrent: setCurrent2 }),
+    programs: () => /* @__PURE__ */ React.createElement(ProgramsPage, { setCurrent: navigate }),
     curriculum: CurriculumPage,
     admissions: AdmissionsPage,
     calendar: CalendarPage,
@@ -1683,7 +1772,7 @@ function App() {
     gallery: GalleryPage,
     blog: BlogPage,
     contact: ContactPage
-  }[current] || (() => /* @__PURE__ */ React.createElement(HomePage, { setCurrent: setCurrent2 }));
+  }[current] || (() => /* @__PURE__ */ React.createElement(HomePage, { setCurrent: navigate }));
   return /* @__PURE__ */ React.createElement("div", { style: { minHeight: "100vh", background: C.white } }, /* @__PURE__ */ React.createElement("style", null, `
         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Instrument+Serif:ital@0;1&family=Josefin+Sans:wght@300;400;500;600&family=Onest:wght@300;400;500;600;700&display=swap');
         *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
@@ -1714,7 +1803,7 @@ function App() {
           .step-row,.curriculum-row{grid-template-columns:1fr!important;gap:16px!important}
           .event-row{grid-template-columns:40px 1fr auto!important;gap:12px!important}
         }
-      `), /* @__PURE__ */ React.createElement(Nav, { current, setCurrent: setCurrent2 }), /* @__PURE__ */ React.createElement(P, null), /* @__PURE__ */ React.createElement(Footer, { setCurrent: setCurrent2 }));
+      `), /* @__PURE__ */ React.createElement(Nav, { current, setCurrent: navigate }), /* @__PURE__ */ React.createElement("main", { role: "main" }, /* @__PURE__ */ React.createElement(P, null)), /* @__PURE__ */ React.createElement(Footer, { setCurrent: navigate }));
 }
 ReactDOM.createRoot(document.getElementById("root")).render(React.createElement(App));
 
