@@ -34,6 +34,8 @@ button:hover{opacity:.88}
 .footer-grid{grid-template-columns:1fr 1fr!important}
 .features-grid{grid-template-columns:1fr 1fr!important}
 .section-header{flex-direction:column;align-items:flex-start!important}
+.materials-row{flex-direction:column!important}
+.materials-row img{width:100%!important;height:200px!important}
 }
 @media(max-width:640px){
 .nav-inner,.rp{padding-left:24px!important;padding-right:24px!important}
@@ -46,6 +48,11 @@ button:hover{opacity:.88}
 .step-row,.curriculum-row{grid-template-columns:1fr!important;gap:16px!important}
 .event-row{grid-template-columns:40px 1fr auto!important;gap:12px!important}
 }
+/* FAQ details/summary */
+details summary::-webkit-details-marker{display:none}
+details summary::marker{display:none;content:""}
+details[open] summary svg{transform:rotate(180deg)}
+details summary svg{transition:transform 0.3s ease}
 /* ChildCareCRM form overrides */
 #childcarecrm-tour-form .childcarecrm-form{font-family:'Onest',sans-serif}
 #childcarecrm-tour-form label:not(.a2p-checkbox-label){font-family:'Onest',sans-serif;font-size:13px;font-weight:500;color:#475569;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:8px;display:block}
@@ -314,6 +321,7 @@ const FileText = (p) => _I({ d: ["M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 0
 const Leaf = (p) => _I({ d: ["M11 20A7 7 0 019.8 6.9C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z", "M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"], ...p });
 const ChevronLeft = (p) => _I({ d: ["M15 18l-6-6 6-6"], ...p });
 const ChevronRight = (p) => _I({ d: ["M9 18l6-6-6-6"], ...p });
+const ChevronDown = (p) => _I({ d: ["M6 9l6 6 6-6"], ...p });
 const Scale = (p) => _I({ d: ["M16 16l3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1z", "M2 16l3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1z", "M7 21h10", "M12 3v18", "M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"], ...p });
 const GraduationCap = (p) => _I({ d: ["M22 10v6M2 10l10-5 10 5-10 5z", "M6 12v5c3 3 6 3 6 3s3 0 6-3v-5"], ...p });
 const HelpingHand = (p) => _I({ d: ["M18 16.98h-5.99c-1.1 0-1.95.68-2.95 1.04C8.04 18.4 7.01 18.47 6 18.02a1 1 0 01-.55-.9V15.5", "M12 12.5A2.5 2.5 0 0014.5 10V7a2 2 0 00-2-2h-1A2 2 0 009.5 7v3a2.5 2.5 0 002.5 2.5z"], ...p });
@@ -1177,7 +1185,58 @@ function ParentsPage() {
               React.createElement("span", { style: { fontFamily: F.b, fontSize: 12, color: C.sky, fontWeight: 500, letterSpacing: "0.04em", textTransform: "uppercase", display: "block", marginBottom: 8 } }, item[1]),
               React.createElement("p", { style: { fontFamily: F.b, fontSize: 14, color: C.textSec, lineHeight: 1.7 } }, item[2]));
           })))
-    ))
+    )),
+
+  /* Understanding Montessori Materials Section */
+  React.createElement("section", { style: { background: C.white, padding: "96px 0", borderTop: "1px solid " + C.border } },
+    React.createElement("div", { style: { maxWidth: 1000, margin: "0 auto", padding: "0 48px" }, className: "rp" },
+      React.createElement(Reveal, null,
+        React.createElement(Tag, null, "The Classroom"),
+        React.createElement("h2", { style: { fontFamily: F.d, fontSize: "clamp(28px,3vw,40px)", fontWeight: 400, color: C.navy, lineHeight: 1.2, marginTop: 16, marginBottom: 20 } }, "Understanding Montessori Materials"),
+        React.createElement(Divider, null),
+        React.createElement("p", { style: { fontFamily: F.b, fontSize: 15, color: C.textSec, lineHeight: 1.8, maxWidth: 620, marginBottom: 56 } }, "Montessori classrooms use specially designed, hands-on materials that help children learn abstract concepts through concrete experience. Here are some of the materials your child will work with.")),
+      [
+        [IMG.redRods, "Red Rods", "Sensorial", "Ten wooden rods ranging from 10cm to 1 meter. Children order them by length, building visual discrimination and an intuitive sense of measurement and dimension."],
+        [IMG.math, "Golden Beads", "Mathematics", "Individual beads, bars of ten, squares of one hundred, and cubes of one thousand. Children physically hold and exchange quantities, making the decimal system tangible."],
+        [IMG.beadChains, "Bead Chains", "Mathematics", "Chains of colored beads that represent skip-counting and squares or cubes of numbers. Children count, label, and discover multiplication patterns through hands-on work."],
+        [IMG.busyBoard, "Practical Life Materials", "Practical Life", "Real tools sized for small hands\u2014pouring pitchers, buttoning frames, and food preparation sets. These build coordination, concentration, and independence."],
+        [IMG.sensorial, "Sensorial Materials", "Sensorial", "Materials that isolate one quality\u2014color, weight, texture, or sound. Children refine their senses and develop the ability to observe, compare, and classify."],
+        [IMG.seguinBoard, "Seguin Board", "Mathematics", "Wooden boards with slots for number tiles. Children compose teen and ten numbers by sliding tiles into place, connecting quantity to symbol."]
+      ].map(function(item, i) {
+        return React.createElement(Reveal, { key: i, delay: i * 0.05 },
+          React.createElement("div", { style: { display: "flex", gap: 32, alignItems: "flex-start", padding: "32px 0", borderBottom: i < 5 ? "1px solid " + C.border : "none", flexDirection: i % 2 === 0 ? "row" : "row-reverse" }, className: "materials-row" },
+            React.createElement("img", { src: item[0], alt: item[1], style: { width: 220, height: 160, objectFit: "cover", borderRadius: 10, flexShrink: 0 } }),
+            React.createElement("div", { style: { flex: 1 } },
+              React.createElement("span", { style: { fontFamily: F.b, fontSize: 11, color: C.sky, fontWeight: 500, letterSpacing: "0.1em", textTransform: "uppercase", display: "block", marginBottom: 8 } }, item[2]),
+              React.createElement("h4", { style: { fontFamily: F.d, fontSize: 22, color: C.navy, marginBottom: 10 } }, item[1]),
+              React.createElement("p", { style: { fontFamily: F.b, fontSize: 14, color: C.textSec, lineHeight: 1.8 } }, item[3]))));
+      }))),
+
+  /* Parent FAQ Section */
+  React.createElement("section", { style: { background: C.offWhite, padding: "96px 0", borderTop: "1px solid " + C.border } },
+    React.createElement("div", { style: { maxWidth: 800, margin: "0 auto", padding: "0 48px" }, className: "rp" },
+      React.createElement(Reveal, null,
+        React.createElement(Tag, null, "FAQ"),
+        React.createElement("h2", { style: { fontFamily: F.d, fontSize: "clamp(28px,3vw,40px)", fontWeight: 400, color: C.navy, lineHeight: 1.2, marginTop: 16, marginBottom: 20 } }, "Frequently Asked Questions"),
+        React.createElement(Divider, null),
+        React.createElement("p", { style: { fontFamily: F.b, fontSize: 15, color: C.textSec, lineHeight: 1.8, maxWidth: 600, marginBottom: 56 } }, "Answers to common questions from new and prospective Montessori families.")),
+      [
+        ["What makes Montessori different from traditional school?", "Montessori classrooms are mixed-age, child-led environments where children choose their own work within a carefully prepared space. Rather than whole-class instruction, guides observe each child and offer individualized lessons. Children learn at their own pace, developing deep concentration and intrinsic motivation."],
+        ["How do you assess my child\u2019s progress without grades?", "Guides maintain detailed observation records tracking each child\u2019s work choices, skill mastery, and social development. During parent\u2013guide conferences, we share these observations along with examples of your child\u2019s work so you can see their growth over time."],
+        ["What if my child has never been in a Montessori program before?", "Children adapt remarkably well. New students receive extra support from their guide and are paired with experienced classmates who model classroom routines. Most children settle into the rhythm within a few weeks."],
+        ["My child is very active. Will they be able to sit still?", "Montessori does not require children to sit still for long periods. Children move freely around the classroom, choosing activities that engage their hands and bodies. This freedom of movement actually helps active children develop focus and self-regulation."],
+        ["How can I support Montessori learning at home?", "Encourage independence\u2014let your child dress themselves, help prepare meals, and tidy their own space. Follow their interests by providing open-ended materials. Limit screen time in favor of hands-on play and outdoor exploration."],
+        ["What is the role of the Montessori guide (teacher)?", "The guide prepares the environment, observes each child carefully, and offers lessons when a child is ready for a new challenge. Rather than directing the class, the guide steps back to let children discover and problem-solve, intervening only when support is truly needed."],
+        ["Do children learn to read and do math?", "Yes. Montessori introduces reading and math through concrete, hands-on materials long before pencil-and-paper work. Many children begin reading between ages 4 and 5, and Montessori students consistently perform at or above grade level in literacy and numeracy."],
+        ["How do mixed-age classrooms benefit my child?", "Younger children learn by observing older peers, while older children reinforce their knowledge by mentoring. This mirrors real-world social dynamics and builds empathy, leadership, and communication skills across the age span."]
+      ].map(function(item, i) {
+        return React.createElement(Reveal, { key: i, delay: i * 0.04 },
+          React.createElement("details", { style: { borderBottom: "1px solid " + C.border, padding: "24px 0" } },
+            React.createElement("summary", { style: { fontFamily: F.d, fontSize: 18, color: C.navy, cursor: "pointer", listStyle: "none", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 16 } },
+              React.createElement("span", null, item[0]),
+              React.createElement(ChevronDown, { size: 18, color: C.textTer, strokeWidth: 1.5 })),
+            React.createElement("p", { style: { fontFamily: F.b, fontSize: 14, color: C.textSec, lineHeight: 1.8, marginTop: 16, paddingRight: 40 } }, item[1])));
+      })))
   );
 }
 function GalleryPage() {
