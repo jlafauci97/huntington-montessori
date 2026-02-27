@@ -322,6 +322,7 @@ const Leaf = (p) => _I({ d: ["M11 20A7 7 0 019.8 6.9C15.5 5 17 4.48 19 2c1 2 2 4
 const ChevronLeft = (p) => _I({ d: ["M15 18l-6-6 6-6"], ...p });
 const ChevronRight = (p) => _I({ d: ["M9 18l6-6-6-6"], ...p });
 const ChevronDown = (p) => _I({ d: ["M6 9l6 6 6-6"], ...p });
+const Check = (p) => _I({ d: ["M20 6L9 17l-5-5"], ...p });
 const Scale = (p) => _I({ d: ["M16 16l3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1z", "M2 16l3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1z", "M7 21h10", "M12 3v18", "M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"], ...p });
 const GraduationCap = (p) => _I({ d: ["M22 10v6M2 10l10-5 10 5-10 5z", "M6 12v5c3 3 6 3 6 3s3 0 6-3v-5"], ...p });
 const HelpingHand = (p) => _I({ d: ["M18 16.98h-5.99c-1.1 0-1.95.68-2.95 1.04C8.04 18.4 7.01 18.47 6 18.02a1 1 0 01-.55-.9V15.5", "M12 12.5A2.5 2.5 0 0014.5 10V7a2 2 0 00-2-2h-1A2 2 0 009.5 7v3a2.5 2.5 0 002.5 2.5z"], ...p });
@@ -1558,6 +1559,35 @@ function CalendarPage() {
   })))))));
 }
 function ContactPage() {
+  const [formStatus, setFormStatus] = useState("idle");
+  function handleSubmit(e) {
+    e.preventDefault();
+    setFormStatus("sending");
+    var form = e.target;
+    fetch("https://formspree.io/f/mvzbleld", {
+      method: "POST",
+      body: new FormData(form),
+      headers: { Accept: "application/json" }
+    }).then(function(res) {
+      if (res.ok) { setFormStatus("sent"); form.reset(); }
+      else { setFormStatus("error"); }
+    }).catch(function() { setFormStatus("error"); });
+  }
+  var inputStyle = {
+    width: "100%",
+    padding: "14px 0",
+    background: "transparent",
+    border: "none",
+    borderBottom: "1px solid " + C.border,
+    fontFamily: F.b,
+    fontSize: 15,
+    color: C.navy,
+    outline: "none",
+    boxSizing: "border-box",
+    transition: "border-color 0.2s"
+  };
+  var focusIn = function(e) { e.target.style.borderBottomColor = C.sky; };
+  var focusOut = function(e) { e.target.style.borderBottomColor = C.border; };
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement(
     PageHeader,
     {
@@ -1578,46 +1608,31 @@ function ContactPage() {
     [Phone, "Phone", "(631) 385-3388"],
     [Mail, "Email", "Admin@huntingtonmontessori.com"],
     [Clock, "Hours", "Monday \u2013 Friday: 9am \u2013 6pm"]
-  ].map(([Icon, label, value], i) => /* @__PURE__ */ React.createElement("div", { key: i, style: { display: "flex", gap: 16, marginBottom: 32, alignItems: "flex-start" } }, /* @__PURE__ */ React.createElement(Icon, { size: 18, color: C.sky, strokeWidth: 1.5, style: { marginTop: 3, flexShrink: 0 } }), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", { style: { fontFamily: F.b, fontSize: 11, color: C.textTer, letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: 6 } }, label), /* @__PURE__ */ React.createElement("div", { style: { fontFamily: F.b, fontSize: 15, color: C.navy, lineHeight: 1.6, whiteSpace: "pre-line" } }, value)))))), /* @__PURE__ */ React.createElement(Reveal, { delay: 0.08 }, /* @__PURE__ */ React.createElement("div", { style: { background: C.offWhite, padding: "64px 56px" } }, /* @__PURE__ */ React.createElement("h4", { style: { fontFamily: F.d, fontSize: 24, color: C.navy, marginBottom: 36 } }, "Send a Message"), ["Full Name", "Email Address", "Phone Number"].map((label, i) => /* @__PURE__ */ React.createElement("div", { key: i, style: { marginBottom: 24 } }, /* @__PURE__ */ React.createElement("label", { style: { fontFamily: F.b, fontSize: 12, color: C.textTer, letterSpacing: "0.08em", textTransform: "uppercase", display: "block", marginBottom: 8 } }, label), /* @__PURE__ */ React.createElement(
-    "input",
-    {
-      style: {
-        width: "100%",
-        padding: "14px 0",
-        background: "transparent",
-        border: "none",
-        borderBottom: `1px solid ${C.border}`,
-        fontFamily: F.b,
-        fontSize: 15,
-        color: C.navy,
-        outline: "none",
-        boxSizing: "border-box",
-        transition: "border-color 0.2s"
-      },
-      onFocus: (e) => e.target.style.borderBottomColor = C.sky,
-      onBlur: (e) => e.target.style.borderBottomColor = C.border
-    }
-  ))), /* @__PURE__ */ React.createElement("div", { style: { marginBottom: 36 } }, /* @__PURE__ */ React.createElement("label", { style: { fontFamily: F.b, fontSize: 12, color: C.textTer, letterSpacing: "0.08em", textTransform: "uppercase", display: "block", marginBottom: 8 } }, "Message"), /* @__PURE__ */ React.createElement(
-    "textarea",
-    {
-      rows: 4,
-      style: {
-        width: "100%",
-        padding: "14px 0",
-        background: "transparent",
-        border: "none",
-        borderBottom: `1px solid ${C.border}`,
-        fontFamily: F.b,
-        fontSize: 15,
-        color: C.navy,
-        outline: "none",
-        boxSizing: "border-box",
-        resize: "vertical"
-      },
-      onFocus: (e) => e.target.style.borderBottomColor = C.sky,
-      onBlur: (e) => e.target.style.borderBottomColor = C.border
-    }
-  )), /* @__PURE__ */ React.createElement(Btn, { full: true }, "Send Message ", /* @__PURE__ */ React.createElement(Send, { size: 14 })))))));
+  ].map(([Icon, label, value], i) => /* @__PURE__ */ React.createElement("div", { key: i, style: { display: "flex", gap: 16, marginBottom: 32, alignItems: "flex-start" } }, /* @__PURE__ */ React.createElement(Icon, { size: 18, color: C.sky, strokeWidth: 1.5, style: { marginTop: 3, flexShrink: 0 } }), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", { style: { fontFamily: F.b, fontSize: 11, color: C.textTer, letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: 6 } }, label), /* @__PURE__ */ React.createElement("div", { style: { fontFamily: F.b, fontSize: 15, color: C.navy, lineHeight: 1.6, whiteSpace: "pre-line" } }, value)))))), /* @__PURE__ */ React.createElement(Reveal, { delay: 0.08 }, /* @__PURE__ */ React.createElement("div", { style: { background: C.offWhite, padding: "64px 56px" } },
+    formStatus === "sent"
+      ? React.createElement("div", { style: { textAlign: "center", padding: "40px 0" } },
+          React.createElement(Check, { size: 48, color: C.sky, strokeWidth: 1.5 }),
+          React.createElement("h4", { style: { fontFamily: F.d, fontSize: 24, color: C.navy, marginTop: 20, marginBottom: 12 } }, "Message Sent!"),
+          React.createElement("p", { style: { fontFamily: F.b, fontSize: 15, color: C.textSec, lineHeight: 1.7 } }, "Thank you for reaching out. We\u2019ll get back to you shortly."),
+          React.createElement("div", { style: { marginTop: 24 } },
+            React.createElement(Btn, { variant: "outline", onClick: function() { setFormStatus("idle"); } }, "Send Another Message")))
+      : React.createElement("form", { onSubmit: handleSubmit },
+          React.createElement("h4", { style: { fontFamily: F.d, fontSize: 24, color: C.navy, marginBottom: 36 } }, "Send a Message"),
+          [["Full Name", "name", "text"], ["Email Address", "email", "email"], ["Phone Number", "phone", "tel"]].map(function(item, i) {
+            return React.createElement("div", { key: i, style: { marginBottom: 24 } },
+              React.createElement("label", { style: { fontFamily: F.b, fontSize: 12, color: C.textTer, letterSpacing: "0.08em", textTransform: "uppercase", display: "block", marginBottom: 8 } }, item[0]),
+              React.createElement("input", { name: item[1], type: item[2], required: i < 2, style: inputStyle, onFocus: focusIn, onBlur: focusOut }));
+          }),
+          React.createElement("div", { style: { marginBottom: 36 } },
+            React.createElement("label", { style: { fontFamily: F.b, fontSize: 12, color: C.textTer, letterSpacing: "0.08em", textTransform: "uppercase", display: "block", marginBottom: 8 } }, "Message"),
+            React.createElement("textarea", { name: "message", rows: 4, required: true, style: Object.assign({}, inputStyle, { resize: "vertical" }), onFocus: focusIn, onBlur: focusOut })),
+          formStatus === "error" ? React.createElement("p", { style: { fontFamily: F.b, fontSize: 13, color: "#e53e3e", marginBottom: 16 } }, "Something went wrong. Please try again.") : null,
+          React.createElement("button", { type: "submit", disabled: formStatus === "sending", style: {
+            width: "100%", padding: "16px", background: formStatus === "sending" ? C.textTer : C.navy, color: C.white,
+            border: "none", borderRadius: 0, fontFamily: F.b, fontSize: 14, fontWeight: 500, letterSpacing: "0.06em",
+            cursor: formStatus === "sending" ? "wait" : "pointer", display: "flex", alignItems: "center", justifyContent: "center", gap: 8, transition: "background 0.2s"
+          } }, formStatus === "sending" ? "Sending..." : "Send Message ", formStatus !== "sending" ? React.createElement(Send, { size: 14 }) : null))
+  ))))));
 }
 function Footer({ setCurrent: setCurrent2 }) {
   return /* @__PURE__ */ React.createElement("footer", { style: { background: C.navy, borderTop: `1px solid ${C.border}` } }, /* @__PURE__ */ React.createElement("div", { style: { maxWidth: 1400, margin: "0 auto", padding: "80px 48px 48px" } }, /* @__PURE__ */ React.createElement("div", { style: {
