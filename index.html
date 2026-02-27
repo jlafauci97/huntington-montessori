@@ -85,7 +85,7 @@ button:hover{opacity:.88}
 .hero-grid{gap:64px!important}
 .stats-grid{grid-template-columns:repeat(2,1fr)!important}
 .stat-cell{border-right:none!important}
-.programs-grid,.test-grid,.team-grid,.gallery-grid,.parents-grid{grid-template-columns:1fr!important}
+.programs-grid,.test-grid,.team-grid,.gallery-grid,.parents-grid,.parents-detail-grid,.parents-grid-3{grid-template-columns:1fr!important}
 .philosophy-row{flex-direction:column!important;text-align:center}
 .whole-child-grid{grid-template-columns:repeat(2,1fr)!important}
 .values-grid{grid-template-columns:1fr!important}
@@ -402,6 +402,9 @@ const Mountain = (p) => _I({ d: ["M8 3l4 8 5-5 7 14H2L8 3z"], ...p });
 const Sun = (p) => _I({ d: [{ t: "circle", cx: 12, cy: 12, r: 4 }, "M12 2v2", "M12 20v2", "M4.93 4.93l1.41 1.41", "M17.66 17.66l1.41 1.41", "M2 12h2", "M20 12h2", "M6.34 17.66l-1.41 1.41", "M19.07 4.93l-1.41 1.41"], ...p });
 const Mail = (p) => _I({ d: [{ t: "rect", x: 2, y: 4, width: 20, height: 16, rx: 2 }, "M22 7l-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"], ...p });
 const Library = (p) => GraduationCap(p);
+const Car = (p) => _I({ d: ["M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9L18 7.2c-.3-.8-1-1.2-1.8-1.2H7.8c-.8 0-1.5.5-1.8 1.2L3.5 11.1C2.7 11.3 2 12.1 2 13v3c0 .6.4 1 1 1h2","M7 17a2 2 0 104 0 2 2 0 00-4 0z","M13 17a2 2 0 104 0 2 2 0 00-4 0z"], ...p });
+const Apple = (p) => _I({ d: ["M12 20.94c1.5 0 2.75 1.06 4 1.06 3 0 6-8 6-12.22A4.91 4.91 0 0017 5c-2.22 0-4 1.44-5 2-1-.56-2.78-2-5-2a4.9 4.9 0 00-5 4.78C2 14 5 22 8 22c1.25 0 2.5-1.06 4-1.06z","M10 2c1 .5 2 2 2 5"], ...p });
+const Award = (p) => _I({ d: [{ t: "circle", cx: 12, cy: 8, r: 6 }, "M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"], ...p });
 const LOGO_SRC = "images/logo.png";
 const C = {
   navy: "#0B1D3A",
@@ -840,7 +843,33 @@ function AboutPage() {
     { icon: Sparkles, title: "Joy of Discovery", text: "Learning is driven by wonder and curiosity, not grades or rewards. When children choose their work, they develop intrinsic motivation that lasts a lifetime." },
     { icon: Globe, title: "Peace & Global Citizenship", text: "Children learn to resolve conflicts with grace, appreciate diverse perspectives, and understand their role as thoughtful, compassionate members of the world." },
     { icon: Leaf, title: "Lifelong Growth", text: "The habits of mind cultivated here \u2014 focus, perseverance, empathy, and love of learning \u2014 become the foundation for a meaningful, purposeful life." }
-  ].map((card, i) => /* @__PURE__  */ React.createElement(Reveal, { key: i, delay: i * 0.08 }, /* @__PURE__ */ React.createElement("div", { style: { background: C.white, padding: "48px 40px", border: `1px solid ${C.border}` } }, /* @__PURE__ */ React.createElement("div", { style: { width: 56, height: 56, borderRadius: "50%", background: C.skyFaint, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 24 } }, /* @__PURE__ */ React.createElement(card.icon, { size: 26, color: C.sky, strokeWidth: 1.5 })), /* @__PURE__ */ React.createElement("h3", { style: { fontFamily: F.d, fontSize: 22, color: C.navy, marginBottom: 12 } }, card.title), /* @__PURE__ */ React.createElement("p", { style: { fontFamily: F.b, fontSize: 15, color: C.textSec, lineHeight: 1.8 } }, card.text))))))));
+  ].map((card, i) => /* @__PURE__  */ React.createElement(Reveal, { key: i, delay: i * 0.08 }, /* @__PURE__ */ React.createElement("div", { style: { background: C.white, padding: "48px 40px", border: `1px solid ${C.border}` } }, /* @__PURE__ */ React.createElement("div", { style: { width: 56, height: 56, borderRadius: "50%", background: C.skyFaint, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 24 } }, /* @__PURE__ */ React.createElement(card.icon, { size: 26, color: C.sky, strokeWidth: 1.5 })), /* @__PURE__ */ React.createElement("h3", { style: { fontFamily: F.d, fontSize: 22, color: C.navy, marginBottom: 12 } }, card.title), /* @__PURE__ */ React.createElement("p", { style: { fontFamily: F.b, fontSize: 15, color: C.textSec, lineHeight: 1.8 } }, card.text))))))),
+
+  /* Why HMS Section */
+  React.createElement("section", { style: { background: C.white, padding: "96px 0", borderTop: "1px solid " + C.border } },
+    React.createElement("div", { style: { maxWidth: 1000, margin: "0 auto", padding: "0 48px" }, className: "rp" },
+      React.createElement(Reveal, null,
+        React.createElement(Tag, null, "Why HMS"),
+        React.createElement("h2", { style: { fontFamily: F.d, fontSize: "clamp(28px,3vw,40px)", fontWeight: 400, color: C.navy, lineHeight: 1.2, marginTop: 16, marginBottom: 20 } }, "What Sets Huntington Montessori Apart"),
+        React.createElement(Divider, null),
+        React.createElement("p", { style: { fontFamily: F.b, fontSize: 15, color: C.textSec, lineHeight: 1.8, maxWidth: 640, marginBottom: 56 } }, "Many schools use the Montessori name, but not all deliver an authentic experience. Here\u2019s what makes our community truly special.")),
+      React.createElement("div", { style: { display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 24 }, className: "values-grid" },
+        [
+          [GraduationCap, "Certified Montessori Guides", "Every lead guide in our school holds credentials from AMI or AMS-accredited training programs. Our teachers don\u2019t just know the materials \u2014 they understand the philosophy deeply and apply it with intention every day."],
+          [Scale, "Authentic, Mixed-Age Classrooms", "Our three-year age groupings aren\u2019t just a label. Children stay with the same guide for three years, building deep relationships and allowing teachers to truly know each child\u2019s strengths, challenges, and growth trajectory."],
+          [Leaf, "Nature-Connected Campus", "Our outdoor spaces are extensions of the classroom. Children garden, explore, and observe the natural world year-round, developing environmental stewardship alongside academic skills."],
+          [HeartHandshake, "Close-Knit Community", "With intentionally small class sizes, families know each other by name. Our community events, parent education nights, and open-door policy foster genuine partnerships between home and school."],
+          [Clock, "25+ Years of Proven Results", "For over a quarter century, Huntington Montessori has been nurturing children who go on to thrive in middle school, high school, and beyond. Our track record speaks to the lasting impact of authentic Montessori education."],
+          [Star, "Whole-Child Focus", "Academic excellence is just one dimension. We equally prioritize social-emotional growth, creative expression, physical development, and character formation \u2014 graduating children who are capable, confident, and compassionate."]
+        ].map(function(item, i) {
+          return React.createElement(Reveal, { key: i, delay: i * 0.06 },
+            React.createElement("div", { style: { background: C.offWhite, padding: "36px 32px", borderRadius: 10, border: "1px solid " + C.border } },
+              React.createElement(item[0], { size: 24, color: C.sky, strokeWidth: 1.5 }),
+              React.createElement("h3", { style: { fontFamily: F.d, fontSize: 20, color: C.navy, marginTop: 16, marginBottom: 10 } }, item[1]),
+              React.createElement("p", { style: { fontFamily: F.b, fontSize: 14, color: C.textSec, lineHeight: 1.8 } }, item[2])));
+        }))
+    ))
+  );
 }
 function ProgramsPage({ setCurrent: setCurrent2 }) {
   const progs = [
@@ -912,7 +941,23 @@ function ProgramsPage({ setCurrent: setCurrent2 }) {
     [Leaf, "Garden & Nature", "Year-round gardening program connecting children to the earth and food systems."],
     [BookOpen, "Library Time", "Weekly visits to our curated library. Reading aloud, book selection, and author studies."],
     [Mountain, "Physical Education", "Yoga, movement games, and outdoor adventures that build coordination and teamwork."]
-  ].map(([Icon, title, desc], j) => /* @__PURE__ */ React.createElement(Reveal, { key: j, delay: j * 0.05 }, /* @__PURE__ */ React.createElement("div", { style: { background: C.navy, padding: "40px 32px" } }, /* @__PURE__ */ React.createElement(Icon, { size: 22, color: C.sky, strokeWidth: 1.5 }), /* @__PURE__ */ React.createElement("h4", { style: { fontFamily: F.d, fontSize: 20, color: C.white, marginTop: 16, marginBottom: 10 } }, title), /* @__PURE__ */ React.createElement("p", { style: { fontFamily: F.b, fontSize: 13, color: "rgba(255,255,255,0.5)", lineHeight: 1.75 } }, desc))))))), /* @__PURE__ */ React.createElement("section", { style: { background: C.offWhite, padding: "96px 0", borderTop: `1px solid ${C.border}` } }, /* @__PURE__ */ React.createElement("div", { style: { maxWidth: 760, margin: "0 auto", padding: "0 48px" }, className: "rp" }, /* @__PURE__ */ React.createElement(Reveal, null, /* @__PURE__ */ React.createElement("div", { style: { display: "grid", gridTemplateColumns: "auto 1fr", gap: 40, alignItems: "start" }, className: "curriculum-row" }, /* @__PURE__ */ React.createElement(Clock, { size: 28, color: C.sky, strokeWidth: 1.5 }), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement(Tag, null, "Extended Day"), /* @__PURE__ */ React.createElement("h3", { style: { fontFamily: F.d, fontSize: 28, color: C.navy, marginTop: 12, marginBottom: 16 } }, "Before & After School Care"), /* @__PURE__ */ React.createElement("p", { style: { fontFamily: F.b, fontSize: 16, color: C.textSec, lineHeight: 1.85, marginBottom: 16 } }, "Our extended day program runs from 7:30 AM to 5:30 PM, providing a seamless continuation of the Montessori environment. Afternoons include outdoor play, creative projects, homework support for elementary students, and plenty of time for unstructured exploration."), /* @__PURE__ */ React.createElement("p", { style: { fontFamily: F.b, fontSize: 16, color: C.textSec, lineHeight: 1.85, marginBottom: 32 } }, "Flexible scheduling is available \u2014 families may enroll in 3 or 5 days per week. A nutritious afternoon snack is provided."), /* @__PURE__ */ React.createElement(Btn, { variant: "outline", onClick: () => setCurrent2("admissions") }, "Learn About Enrollment ", /* @__PURE__ */ React.createElement(ArrowRight, { size: 14 }))))))), /* @__PURE__ */ React.createElement("section", { style: { background: C.white, padding: "96px 0", borderTop: `1px solid ${C.border}` } }, /* @__PURE__ */ React.createElement("div", { style: { maxWidth: 760, margin: "0 auto", padding: "0 48px" }, className: "rp" }, /* @__PURE__ */ React.createElement(Reveal, null, /* @__PURE__ */ React.createElement(Tag, null, "Common Questions"), /* @__PURE__ */ React.createElement("h2", { style: { fontFamily: F.d, fontSize: "clamp(28px,3vw,40px)", fontWeight: 400, color: C.navy, lineHeight: 1.2, marginTop: 16, marginBottom: 56 } }, "Frequently asked about our programs")), [
+  ].map(([Icon, title, desc], j) => /* @__PURE__ */ React.createElement(Reveal, { key: j, delay: j * 0.05 }, /* @__PURE__ */ React.createElement("div", { style: { background: C.navy, padding: "40px 32px" } }, /* @__PURE__ */ React.createElement(Icon, { size: 22, color: C.sky, strokeWidth: 1.5 }), /* @__PURE__ */ React.createElement("h4", { style: { fontFamily: F.d, fontSize: 20, color: C.white, marginTop: 16, marginBottom: 10 } }, title), /* @__PURE__ */ React.createElement("p", { style: { fontFamily: F.b, fontSize: 13, color: "rgba(255,255,255,0.5)", lineHeight: 1.75 } }, desc))))))), /* @__PURE__ */ React.createElement("section", { style: { background: C.offWhite, padding: "96px 0", borderTop: `1px solid ${C.border}` } }, /* @__PURE__ */ React.createElement("div", { style: { maxWidth: 1e3, margin: "0 auto", padding: "0 48px" }, className: "rp" },
+React.createElement(Reveal, null, React.createElement(Tag, null, "Extended Day"), React.createElement("h2", { style: { fontFamily: F.d, fontSize: "clamp(28px,3vw,40px)", fontWeight: 400, color: C.navy, lineHeight: 1.2, marginTop: 16, marginBottom: 20 } }, "Before & After School Care"), React.createElement(Divider, null), React.createElement("p", { style: { fontFamily: F.b, fontSize: 16, color: C.textSec, lineHeight: 1.85, maxWidth: 720, marginBottom: 48 } }, "Our extended day program provides a seamless continuation of the Montessori environment for families who need earlier drop-off or later pickup. Children stay in the same prepared environment with familiar guides.")),
+React.createElement(Reveal, { delay: 0.05 }, React.createElement("div", { style: { display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 1, background: C.border, marginBottom: 48 }, className: "programs-detail-grid" },
+React.createElement("div", { style: { background: C.offWhite, padding: "40px 36px" } }, React.createElement("div", { style: { fontFamily: F.b, fontSize: 11, color: C.sky, letterSpacing: "0.12em", textTransform: "uppercase", fontWeight: 500, marginBottom: 24 } }, "Morning Care"), React.createElement("div", { style: { fontFamily: F.d, fontSize: 28, color: C.navy, marginBottom: 12 } }, "7:30 \u2013 8:30 AM"), React.createElement("p", { style: { fontFamily: F.b, fontSize: 14, color: C.textSec, lineHeight: 1.8 } }, "Children arrive at their own pace and settle into quiet morning activities \u2014 reading, drawing, puzzles, or helping prepare the classroom for the day.")),
+React.createElement("div", { style: { background: C.offWhite, padding: "40px 36px" } }, React.createElement("div", { style: { fontFamily: F.b, fontSize: 11, color: C.sky, letterSpacing: "0.12em", textTransform: "uppercase", fontWeight: 500, marginBottom: 24 } }, "Afternoon Program"), React.createElement("div", { style: { fontFamily: F.d, fontSize: 28, color: C.navy, marginBottom: 12 } }, "3:30 \u2013 5:30 PM"), React.createElement("p", { style: { fontFamily: F.b, fontSize: 14, color: C.textSec, lineHeight: 1.8 } }, "Outdoor play, creative projects, and unstructured exploration. Elementary students receive homework support. A nutritious afternoon snack is provided.")))),
+React.createElement(Reveal, { delay: 0.1 }, React.createElement("div", { style: { display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }, className: "features-grid" },
+[["Flexible scheduling \u2014 enroll for 3 or 5 days per week", Clock], ["Same Montessori guides your child knows and trusts", Heart], ["Included snack with allergy accommodations available", Apple]].map(function(item, i) { return React.createElement("div", { key: i, style: { display: "flex", alignItems: "flex-start", gap: 12 } }, React.createElement(item[1], { size: 18, color: C.sky, strokeWidth: 1.5, style: { marginTop: 2, flexShrink: 0 } }), React.createElement("span", { style: { fontFamily: F.b, fontSize: 14, color: C.text, lineHeight: 1.6 } }, item[0])); }))))),
+React.createElement("section", { style: { background: C.white, padding: "96px 0", borderTop: "1px solid " + C.border } }, React.createElement("div", { style: { maxWidth: 1e3, margin: "0 auto", padding: "0 48px" }, className: "rp" },
+React.createElement(Reveal, null, React.createElement(Tag, null, "Summer"), React.createElement("h2", { style: { fontFamily: F.d, fontSize: "clamp(28px,3vw,40px)", fontWeight: 400, color: C.navy, lineHeight: 1.2, marginTop: 16, marginBottom: 20 } }, "Summer Program"), React.createElement(Divider, null), React.createElement("p", { style: { fontFamily: F.b, fontSize: 16, color: C.textSec, lineHeight: 1.85, maxWidth: 720, marginBottom: 48 } }, "Our summer program runs from mid-June through August, offering a relaxed but purposeful Montessori experience. It\u2019s open to both current students and children new to Montessori \u2014 a wonderful way for prospective families to try the program.")),
+React.createElement(Reveal, { delay: 0.06 }, React.createElement("div", { style: { display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24, marginBottom: 48 }, className: "features-grid" },
+[[Sun, "Outdoor Exploration", "Nature walks, gardening, water play, and time in our outdoor prepared environment every day, weather permitting."],
+[Palette, "Art & Creative Expression", "Open-ended art projects, music, drama, and sensory activities that encourage creativity and self-expression."],
+[Microscope, "Science & Discovery", "Hands-on experiments, nature study, cooking projects, and age-appropriate STEM activities using Montessori materials."]].map(function(item, i) { return React.createElement("div", { key: i, style: { background: C.offWhite, padding: "40px 32px", border: "1px solid " + C.border } }, React.createElement(item[0], { size: 24, color: C.sky, strokeWidth: 1.5 }), React.createElement("h4", { style: { fontFamily: F.d, fontSize: 20, color: C.navy, marginTop: 16, marginBottom: 10 } }, item[1]), React.createElement("p", { style: { fontFamily: F.b, fontSize: 14, color: C.textSec, lineHeight: 1.8 } }, item[2])); }))),
+React.createElement(Reveal, { delay: 0.1 }, React.createElement("div", { style: { background: C.offWhite, padding: "40px 36px", border: "1px solid " + C.border } },
+React.createElement("div", { style: { display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 32 }, className: "features-grid" },
+[["Ages", "2 \u2013 12 years"], ["Schedule", "Mon\u2013Fri, 8:30 AM \u2013 3:00 PM"], ["Extended Day", "Available 7:30 AM \u2013 5:30 PM"]].map(function(item, i) { return React.createElement("div", { key: i }, React.createElement("div", { style: { fontFamily: F.b, fontSize: 11, color: C.sky, letterSpacing: "0.12em", textTransform: "uppercase", fontWeight: 500, marginBottom: 8 } }, item[0]), React.createElement("div", { style: { fontFamily: F.d, fontSize: 20, color: C.navy } }, item[1])); })),
+React.createElement("p", { style: { fontFamily: F.b, fontSize: 14, color: C.textSec, lineHeight: 1.8, marginTop: 24 } }, "Enrollment is available by the week or for the full summer session. Contact our office for availability and scheduling options."))))), /* @__PURE__ */ React.createElement("section", { style: { background: C.white, padding: "96px 0", borderTop: `1px solid ${C.border}` } }, /* @__PURE__ */ React.createElement("div", { style: { maxWidth: 760, margin: "0 auto", padding: "0 48px" }, className: "rp" }, /* @__PURE__ */ React.createElement(Reveal, null, /* @__PURE__ */ React.createElement(Tag, null, "Common Questions"), /* @__PURE__ */ React.createElement("h2", { style: { fontFamily: F.d, fontSize: "clamp(28px,3vw,40px)", fontWeight: 400, color: C.navy, lineHeight: 1.2, marginTop: 16, marginBottom: 56 } }, "Frequently asked about our programs")), [
     { q: "What makes Montessori different from traditional preschool or kindergarten?", a: "In Montessori, children choose their own work from a carefully prepared environment. Instead of whole-group instruction, guides present individualized lessons based on each child's readiness. The multi-age classroom, extended uninterrupted learning time, and hands-on materials create deep, lasting understanding rather than rote memorization." },
     { q: "How do you assess student progress without traditional grades?", a: "Our guides maintain detailed observation records for each child, tracking mastery of specific skills across all curriculum areas. Families receive comprehensive narrative progress reports twice per year and have two parent\u2013guide conferences. We believe authentic assessment comes from understanding the whole child \u2014 not from a letter or number." },
     { q: "Will my child be prepared for traditional school after Montessori?", a: "Absolutely. Research consistently shows that Montessori students transition successfully and often excel in traditional settings. Beyond academics, they bring exceptional executive function skills \u2014 self-discipline, time management, organization, and the ability to work independently \u2014 that serve them throughout their education." },
@@ -1173,6 +1218,94 @@ function ParentsPage() {
     [Mail, "Digital Newsletter", "Weekly updates with photos, curriculum highlights, and announcements."],
     [Library, "Parent Library", "Borrow Montessori books and resources to deepen understanding."]
   ].map(([Icon, title, desc], i) => /* @__PURE__ */ React.createElement(Reveal, { key: i, delay: i * 0.04 }, /* @__PURE__ */ React.createElement("div", { style: { background: C.white, padding: "48px 40px" } }, /* @__PURE__ */ React.createElement(Icon, { size: 24, color: C.sky, strokeWidth: 1.5 }), /* @__PURE__ */ React.createElement("h4", { style: { fontFamily: F.d, fontSize: 20, color: C.navy, marginTop: 20, marginBottom: 12 } }, title), /* @__PURE__ */ React.createElement("p", { style: { fontFamily: F.b, fontSize: 14, color: C.textSec, lineHeight: 1.8 } }, desc))))))),
+
+  /* Lunch & Nutrition Section */
+  React.createElement("section", { style: { background: C.offWhite, padding: "96px 0", borderTop: "1px solid " + C.border } },
+    React.createElement("div", { style: { maxWidth: 1000, margin: "0 auto", padding: "0 48px" }, className: "rp" },
+      React.createElement(Reveal, null,
+        React.createElement(Tag, null, "Daily Life"),
+        React.createElement("h2", { style: { fontFamily: F.d, fontSize: "clamp(28px,3vw,40px)", fontWeight: 400, color: C.navy, lineHeight: 1.2, marginTop: 16, marginBottom: 20 } }, "Lunch & Nutrition"),
+        React.createElement(Divider, null),
+        React.createElement("p", { style: { fontFamily: F.b, fontSize: 15, color: C.textSec, lineHeight: 1.8, maxWidth: 640, marginBottom: 48 } }, "Mealtime is an important part of the Montessori day. Children set their own place, serve themselves, and clean up afterward \u2014 building independence, coordination, and social skills.")),
+      React.createElement(Reveal, { delay: 0.06 },
+        React.createElement("div", { style: { display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 24, marginBottom: 48 }, className: "parents-detail-grid" },
+          React.createElement("div", { style: { background: C.white, borderRadius: 10, padding: "32px 28px", border: "1px solid " + C.border } },
+            React.createElement(Apple, { size: 22, color: C.sky, strokeWidth: 1.5 }),
+            React.createElement("h4", { style: { fontFamily: F.d, fontSize: 18, color: C.navy, marginTop: 16, marginBottom: 10 } }, "What to Pack"),
+            React.createElement("p", { style: { fontFamily: F.b, fontSize: 14, color: C.textSec, lineHeight: 1.8 } }, "Children bring a packed lunch from home each day. We encourage wholesome, balanced meals with a variety of fruits, vegetables, proteins, and whole grains. Please avoid candy, sugary drinks, and highly processed snacks.")),
+          React.createElement("div", { style: { background: C.white, borderRadius: 10, padding: "32px 28px", border: "1px solid " + C.border } },
+            React.createElement(Heart, { size: 22, color: C.sky, strokeWidth: 1.5 }),
+            React.createElement("h4", { style: { fontFamily: F.d, fontSize: 18, color: C.navy, marginTop: 16, marginBottom: 10 } }, "Allergy Awareness"),
+            React.createElement("p", { style: { fontFamily: F.b, fontSize: 14, color: C.textSec, lineHeight: 1.8 } }, "Our school is a nut-aware environment. All allergies are documented and shared with classroom guides. We work closely with families to accommodate dietary needs and ensure every child feels safe at mealtime.")))),
+      React.createElement(Reveal, { delay: 0.1 },
+        React.createElement("div", { style: { background: C.white, borderRadius: 10, padding: "32px 28px", border: "1px solid " + C.border } },
+          React.createElement("div", { style: { display: "flex", alignItems: "center", gap: 12, marginBottom: 16 } },
+            React.createElement(Clock, { size: 20, color: C.sky, strokeWidth: 1.5 }),
+            React.createElement("h4", { style: { fontFamily: F.d, fontSize: 18, color: C.navy } }, "Snack Time")),
+          React.createElement("p", { style: { fontFamily: F.b, fontSize: 14, color: C.textSec, lineHeight: 1.8 } }, "Morning and afternoon snacks are provided by the school and rotate seasonally. Children participate in snack preparation as part of Practical Life \u2014 slicing bananas, spreading hummus, pouring water \u2014 turning nutrition into a learning experience.")))
+    )),
+
+  /* Transportation & Arrival Section */
+  React.createElement("section", { style: { background: C.white, padding: "96px 0", borderTop: "1px solid " + C.border } },
+    React.createElement("div", { style: { maxWidth: 1000, margin: "0 auto", padding: "0 48px" }, className: "rp" },
+      React.createElement(Reveal, null,
+        React.createElement(Tag, null, "Getting Here"),
+        React.createElement("h2", { style: { fontFamily: F.d, fontSize: "clamp(28px,3vw,40px)", fontWeight: 400, color: C.navy, lineHeight: 1.2, marginTop: 16, marginBottom: 20 } }, "Arrival & Dismissal"),
+        React.createElement(Divider, null),
+        React.createElement("p", { style: { fontFamily: F.b, fontSize: 15, color: C.textSec, lineHeight: 1.8, maxWidth: 640, marginBottom: 48 } }, "We\u2019ve designed a smooth, safe routine for drop-off and pick-up that supports your child\u2019s transition into and out of the school day.")),
+      React.createElement(Reveal, { delay: 0.06 },
+        React.createElement("div", { style: { display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24, marginBottom: 48 }, className: "parents-grid-3" },
+          React.createElement("div", { style: { background: C.offWhite, borderRadius: 10, padding: "32px 24px", border: "1px solid " + C.border, textAlign: "center" } },
+            React.createElement(Sun, { size: 24, color: C.sky, strokeWidth: 1.5 }),
+            React.createElement("h4", { style: { fontFamily: F.d, fontSize: 17, color: C.navy, marginTop: 14, marginBottom: 8 } }, "Morning Drop-Off"),
+            React.createElement("p", { style: { fontFamily: F.b, fontSize: 22, color: C.sky, fontWeight: 600, marginBottom: 6 } }, "8:00 \u2013 8:30 AM"),
+            React.createElement("p", { style: { fontFamily: F.b, fontSize: 13, color: C.textSec, lineHeight: 1.7 } }, "Parents walk children to their classroom door. Guides greet each child individually to begin the day with warmth and connection.")),
+          React.createElement("div", { style: { background: C.offWhite, borderRadius: 10, padding: "32px 24px", border: "1px solid " + C.border, textAlign: "center" } },
+            React.createElement(Clock, { size: 24, color: C.sky, strokeWidth: 1.5 }),
+            React.createElement("h4", { style: { fontFamily: F.d, fontSize: 17, color: C.navy, marginTop: 14, marginBottom: 8 } }, "Afternoon Pick-Up"),
+            React.createElement("p", { style: { fontFamily: F.b, fontSize: 22, color: C.sky, fontWeight: 600, marginBottom: 6 } }, "3:00 \u2013 3:30 PM"),
+            React.createElement("p", { style: { fontFamily: F.b, fontSize: 13, color: C.textSec, lineHeight: 1.7 } }, "Children are dismissed from their classroom. A brief daily summary is shared with parents, and guides are available for quick check-ins.")),
+          React.createElement("div", { style: { background: C.offWhite, borderRadius: 10, padding: "32px 24px", border: "1px solid " + C.border, textAlign: "center" } },
+            React.createElement(Car, { size: 24, color: C.sky, strokeWidth: 1.5 }),
+            React.createElement("h4", { style: { fontFamily: F.d, fontSize: 17, color: C.navy, marginTop: 14, marginBottom: 8 } }, "Parking & Access"),
+            React.createElement("p", { style: { fontFamily: F.b, fontSize: 22, color: C.sky, fontWeight: 600, marginBottom: 6 } }, "On-Site Lot"),
+            React.createElement("p", { style: { fontFamily: F.b, fontSize: 13, color: C.textSec, lineHeight: 1.7 } }, "Free on-site parking is available. Our lot has designated drop-off and pick-up lanes for safe, efficient traffic flow during busy hours.")))),
+      React.createElement(Reveal, { delay: 0.1 },
+        React.createElement("div", { style: { background: C.offWhite, borderRadius: 10, padding: "28px 28px", border: "1px solid " + C.border, display: "flex", alignItems: "flex-start", gap: 16 } },
+          React.createElement(Shield, { size: 20, color: C.sky, strokeWidth: 1.5, style: { flexShrink: 0, marginTop: 2 } }),
+          React.createElement("div", null,
+            React.createElement("h4", { style: { fontFamily: F.d, fontSize: 16, color: C.navy, marginBottom: 6 } }, "Safety & Authorization"),
+            React.createElement("p", { style: { fontFamily: F.b, fontSize: 14, color: C.textSec, lineHeight: 1.7 } }, "All families receive a security code at enrollment. Children will only be released to authorized individuals listed on the pick-up form. Photo ID may be requested. Early dismissals require advance notice to the office."))))
+    )),
+
+  /* Beyond Montessori \u2014 Transition to Traditional School */
+  React.createElement("section", { style: { background: C.offWhite, padding: "96px 0", borderTop: "1px solid " + C.border } },
+    React.createElement("div", { style: { maxWidth: 1000, margin: "0 auto", padding: "0 48px" }, className: "rp" },
+      React.createElement(Reveal, null,
+        React.createElement(Tag, null, "Beyond Montessori"),
+        React.createElement("h2", { style: { fontFamily: F.d, fontSize: "clamp(28px,3vw,40px)", fontWeight: 400, color: C.navy, lineHeight: 1.2, marginTop: 16, marginBottom: 20 } }, "Preparing for What\u2019s Next"),
+        React.createElement(Divider, null),
+        React.createElement("p", { style: { fontFamily: F.b, fontSize: 15, color: C.textSec, lineHeight: 1.8, maxWidth: 640, marginBottom: 48 } }, "One of the most common questions we hear: \u201CHow will my child adjust to a traditional school?\u201D The answer is reassuring \u2014 Montessori graduates consistently thrive.")),
+      React.createElement(Reveal, { delay: 0.06 },
+        React.createElement("div", { style: { display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 24, marginBottom: 48 }, className: "parents-detail-grid" },
+          [
+            [GraduationCap, "Academic Readiness", "Montessori children develop strong foundations in literacy, mathematics, and critical thinking. By working at their own pace, they often exceed grade-level expectations and enter new schools well-prepared academically."],
+            [Brain, "Executive Function Skills", "Self-regulation, time management, and independent problem-solving are built into every Montessori day. These executive function skills give children a significant advantage when navigating structured classroom settings."],
+            [Users, "Social Confidence", "Years of working in mixed-age groups build natural leadership, empathy, and the ability to collaborate with diverse peers \u2014 skills that translate directly to any social environment."],
+            [Target, "Love of Learning", "Perhaps the greatest gift: Montessori children approach new experiences with curiosity rather than anxiety. They\u2019ve learned to ask questions, seek answers, and take ownership of their education."]
+          ].map(function(item, i) {
+            return React.createElement("div", { key: i, style: { background: C.white, borderRadius: 10, padding: "32px 28px", border: "1px solid " + C.border } },
+              React.createElement(item[0], { size: 22, color: C.sky, strokeWidth: 1.5 }),
+              React.createElement("h4", { style: { fontFamily: F.d, fontSize: 18, color: C.navy, marginTop: 16, marginBottom: 10 } }, item[1]),
+              React.createElement("p", { style: { fontFamily: F.b, fontSize: 14, color: C.textSec, lineHeight: 1.8 } }, item[2]));
+          }))),
+      React.createElement(Reveal, { delay: 0.12 },
+        React.createElement("div", { style: { background: C.white, borderRadius: 10, padding: "32px 28px", border: "1px solid " + C.border } },
+          React.createElement("div", { style: { display: "flex", alignItems: "center", gap: 12, marginBottom: 16 } },
+            React.createElement(Award, { size: 20, color: C.sky, strokeWidth: 1.5 }),
+            React.createElement("h4", { style: { fontFamily: F.d, fontSize: 18, color: C.navy } }, "Our Graduates")),
+          React.createElement("p", { style: { fontFamily: F.b, fontSize: 14, color: C.textSec, lineHeight: 1.8 } }, "Huntington Montessori alumni have gone on to excel at public, private, and parochial schools across Long Island. Teachers consistently note their maturity, self-direction, and enthusiasm for learning. We\u2019re proud of every child who leaves our community \u2014 and we stay connected with many families long after graduation.")))
+    )),
 
   /* Montessori Resources Section */
   React.createElement("section", { style: { background: C.offWhite, padding: "96px 0", borderTop: "1px solid " + C.border } },
