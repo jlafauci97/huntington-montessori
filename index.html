@@ -1116,7 +1116,69 @@ function ParentsPage() {
     [CalendarDays, "Community Events", "Family picnics, cultural celebrations, and volunteer opportunities."],
     [Mail, "Digital Newsletter", "Weekly updates with photos, curriculum highlights, and announcements."],
     [Library, "Parent Library", "Borrow Montessori books and resources to deepen understanding."]
-  ].map(([Icon, title, desc], i) => /* @__PURE__ */ React.createElement(Reveal, { key: i, delay: i * 0.04 }, /* @__PURE__ */ React.createElement("div", { style: { background: C.white, padding: "48px 40px" } }, /* @__PURE__ */ React.createElement(Icon, { size: 24, color: C.sky, strokeWidth: 1.5 }), /* @__PURE__ */ React.createElement("h4", { style: { fontFamily: F.d, fontSize: 20, color: C.navy, marginTop: 20, marginBottom: 12 } }, title), /* @__PURE__ */ React.createElement("p", { style: { fontFamily: F.b, fontSize: 14, color: C.textSec, lineHeight: 1.8 } }, desc))))))));
+  ].map(([Icon, title, desc], i) => /* @__PURE__ */ React.createElement(Reveal, { key: i, delay: i * 0.04 }, /* @__PURE__ */ React.createElement("div", { style: { background: C.white, padding: "48px 40px" } }, /* @__PURE__ */ React.createElement(Icon, { size: 24, color: C.sky, strokeWidth: 1.5 }), /* @__PURE__ */ React.createElement("h4", { style: { fontFamily: F.d, fontSize: 20, color: C.navy, marginTop: 20, marginBottom: 12 } }, title), /* @__PURE__ */ React.createElement("p", { style: { fontFamily: F.b, fontSize: 14, color: C.textSec, lineHeight: 1.8 } }, desc))))))),
+
+  /* Montessori Resources Section */
+  React.createElement("section", { style: { background: C.offWhite, padding: "96px 0", borderTop: "1px solid " + C.border } },
+    React.createElement("div", { style: { maxWidth: 1000, margin: "0 auto", padding: "0 48px" }, className: "rp" },
+      React.createElement(Reveal, null,
+        React.createElement(Tag, null, "Learn More"),
+        React.createElement("h2", { style: { fontFamily: F.d, fontSize: "clamp(28px,3vw,40px)", fontWeight: 400, color: C.navy, lineHeight: 1.2, marginTop: 16, marginBottom: 20 } }, "Montessori Resources for Parents"),
+        React.createElement(Divider, null),
+        React.createElement("p", { style: { fontFamily: F.b, fontSize: 15, color: C.textSec, lineHeight: 1.8, maxWidth: 600, marginBottom: 56 } }, "Deepen your understanding of the Montessori method. These books, websites, and media are trusted resources recommended by educators worldwide.")),
+
+      /* Books */
+      React.createElement(Reveal, { delay: 0.06 },
+        React.createElement("div", { style: { display: "flex", alignItems: "center", gap: 12, marginBottom: 24 } },
+          React.createElement(BookOpen, { size: 20, color: C.sky, strokeWidth: 1.5 }),
+          React.createElement("h3", { style: { fontFamily: F.d, fontSize: 22, fontWeight: 400, color: C.navy } }, "Books")),
+        React.createElement("div", { style: { display: "flex", flexDirection: "column", gap: 16, marginBottom: 56 } },
+          [
+            ["The Montessori Toddler", "Simone Davies", "A practical guide to raising curious, responsible children using Montessori principles at home."],
+            ["The Absorbent Mind", "Maria Montessori", "Montessori\u2019s foundational text on how children naturally learn and develop."],
+            ["Montessori from the Start", "Paula Polk Lillard & Lynn Lillard Jessen", "A comprehensive guide to Montessori for children from birth to age three."]
+          ].map(function(item, i) {
+            return React.createElement("div", { key: i, style: { background: C.white, borderRadius: 10, padding: "24px 28px", border: "1px solid " + C.border } },
+              React.createElement("h4", { style: { fontFamily: F.d, fontSize: 17, color: C.navy, marginBottom: 4, fontStyle: "italic" } }, item[0]),
+              React.createElement("span", { style: { fontFamily: F.b, fontSize: 12, color: C.sky, fontWeight: 500, letterSpacing: "0.04em", textTransform: "uppercase", display: "block", marginBottom: 8 } }, item[1]),
+              React.createElement("p", { style: { fontFamily: F.b, fontSize: 14, color: C.textSec, lineHeight: 1.7 } }, item[2]));
+          }))),
+
+      /* Websites & Organizations */
+      React.createElement(Reveal, { delay: 0.12 },
+        React.createElement("div", { style: { display: "flex", alignItems: "center", gap: 12, marginBottom: 24 } },
+          React.createElement(Globe, { size: 20, color: C.sky, strokeWidth: 1.5 }),
+          React.createElement("h3", { style: { fontFamily: F.d, fontSize: 22, fontWeight: 400, color: C.navy } }, "Websites & Organizations")),
+        React.createElement("div", { style: { display: "flex", flexDirection: "column", gap: 16, marginBottom: 56 } },
+          [
+            ["American Montessori Society", "amshq.org", "Research, articles, school accreditation information, and parent resources."],
+            ["Association Montessori Internationale", "montessori-ami.org", "The original Montessori organization, founded by Maria Montessori herself."],
+            ["Montessori Guide", "montessoriguide.org", "A free video library showcasing Montessori lessons and classroom practices."]
+          ].map(function(item, i) {
+            return React.createElement("div", { key: i, style: { background: C.white, borderRadius: 10, padding: "24px 28px", border: "1px solid " + C.border } },
+              React.createElement("h4", { style: { fontFamily: F.d, fontSize: 17, color: C.navy, marginBottom: 4 } }, item[0]),
+              React.createElement("span", { style: { fontFamily: F.b, fontSize: 12, color: C.sky, fontWeight: 500, letterSpacing: "0.04em", display: "block", marginBottom: 8 } }, item[1]),
+              React.createElement("p", { style: { fontFamily: F.b, fontSize: 14, color: C.textSec, lineHeight: 1.7 } }, item[2]));
+          }))),
+
+      /* Videos & Podcasts */
+      React.createElement(Reveal, { delay: 0.18 },
+        React.createElement("div", { style: { display: "flex", alignItems: "center", gap: 12, marginBottom: 24 } },
+          React.createElement(Star, { size: 20, color: C.sky, strokeWidth: 1.5 }),
+          React.createElement("h3", { style: { fontFamily: F.d, fontSize: 22, fontWeight: 400, color: C.navy } }, "Videos & Podcasts")),
+        React.createElement("div", { style: { display: "flex", flexDirection: "column", gap: 16 } },
+          [
+            ["The Montessori Approach", "Documentary", "A short documentary overview of how Montessori education works in practice."],
+            ["The Good Enough Montessorian", "Podcast", "Practical, down-to-earth tips for bringing Montessori principles into parenting."],
+            ["Simone Davies", "YouTube Channel", "Visual guides to setting up Montessori-inspired spaces and activities at home."]
+          ].map(function(item, i) {
+            return React.createElement("div", { key: i, style: { background: C.white, borderRadius: 10, padding: "24px 28px", border: "1px solid " + C.border } },
+              React.createElement("h4", { style: { fontFamily: F.d, fontSize: 17, color: C.navy, marginBottom: 4 } }, item[0]),
+              React.createElement("span", { style: { fontFamily: F.b, fontSize: 12, color: C.sky, fontWeight: 500, letterSpacing: "0.04em", textTransform: "uppercase", display: "block", marginBottom: 8 } }, item[1]),
+              React.createElement("p", { style: { fontFamily: F.b, fontSize: 14, color: C.textSec, lineHeight: 1.7 } }, item[2]));
+          })))
+    ))
+  );
 }
 function GalleryPage() {
   const items = [
